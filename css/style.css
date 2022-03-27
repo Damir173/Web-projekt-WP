@@ -1,0 +1,53 @@
+.navbar{
+    margin: 0.5% 5% 0 5%;
+}
+
+body{
+    background-color: rgb(231, 231, 231) !important;
+}
+
+.navbar{
+    border: 1px solid rgb(133, 133, 133);
+}
+
+.nav-item-a  {
+
+    border: 1px solid rgba(34, 118, 187, 0.829);
+    background-color: rgba(69, 164, 243, 0.829) ;
+    border-radius: 5px;
+}
+
+.navbar-toggler{
+    margin-bottom:7px;
+    border: 1.5px solid rgb(78, 78, 78) !important;
+}
+
+/* slideshow */
+
+.slideshow-container {
+  margin: 0 5% 0 5%; 
+  position: relative;
+  height:300px;
+  border-left: 1px solid rgb(133, 133, 133); 
+  border-bottom: 1px solid rgb(133, 133, 133);
+  border-right: 1px solid rgb(133, 133, 133);
+}
+.mySlides img{
+    height: 300px;
+}
+  /* Fading animation */
+  .fade {
+    animation-name: fade;
+    animation-duration: 5s;
+  }
+  
+  @keyframes fade {
+    from {opacity: .7} 
+    to {opacity: 1}
+  }
+
+
+  
+  /* slideshow kraj/*
+
+
