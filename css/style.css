@@ -1,14 +1,13 @@
 .navbar{
-    margin: 0.5% 5% 0 5%;
+    margin: 1.5% 5% 0 5%;
+    border: 1px solid rgb(133, 133, 133);
+    background-color: rgb(197, 197, 197) ;
 }
 
 body{
     background-color: rgb(231, 231, 231) !important;
 }
 
-.navbar{
-    border: 1px solid rgb(133, 133, 133);
-}
 
 .nav-item-a  {
 
@@ -29,7 +28,7 @@ body{
   position: relative;
   height:300px;
   border-left: 1px solid rgb(133, 133, 133); 
-/*  border-bottom: 1px solid rgb(133, 133, 133); */
+  border-bottom: 1px solid rgb(133, 133, 133); 
   border-right: 1px solid rgb(133, 133, 133);
 }
 .mySlides img{
@@ -56,10 +55,11 @@ body{
   * {
     box-sizing: border-box;
   }
-  .flag {
+  .flag  {
     margin: 0 5% 0 5%;
     height: 56px;
-    position: relative; 
+    position: relative;
+
   }
   .flag:after {
     width:100%;
@@ -68,10 +68,32 @@ body{
     left: 0;
     height: 0;
     bottom: 0;
-    border-top: 56.5px solid rgb(197, 197, 197);
+    border-top: 56px solid rgb(197, 197, 197);
     border-left: 100px solid transparent;
-    border-right: 100px solid transparent;
- 
+    border-right: 100px solid transparent; 
   }
 
- 
+.flag2 {
+  margin: 0.5% 5% 0 5%;
+  height: 56px;
+  position: relative;
+}
+
+.flag2:after {
+  width:100%;
+  content: ' ';
+  position: absolute;
+  left: 0;
+  height: 0;
+  bottom: 0;
+  border-bottom: 56px solid rgb(197, 197, 197);
+  border-left: 100px solid transparent;
+  border-right: 100px solid transparent; 
+}
+
+.test{
+  margin: 0% 5% 0 5%;
+  background-color: rgb(197, 197, 197);
+  height:500px;
+
+}
