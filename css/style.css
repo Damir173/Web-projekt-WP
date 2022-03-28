@@ -29,7 +29,7 @@ body{
   position: relative;
   height:300px;
   border-left: 1px solid rgb(133, 133, 133); 
-  border-bottom: 1px solid rgb(133, 133, 133);
+/*  border-bottom: 1px solid rgb(133, 133, 133); */
   border-right: 1px solid rgb(133, 133, 133);
 }
 .mySlides img{
@@ -48,6 +48,30 @@ body{
 
 
   
-  /* slideshow kraj/*
+  /* slideshow kraj */
 
 
+
+
+  * {
+    box-sizing: border-box;
+  }
+  .flag {
+    margin: 0 5% 0 5%;
+    height: 56px;
+    position: relative; 
+  }
+  .flag:after {
+    width:100%;
+    content: ' ';
+    position: absolute;
+    left: 0;
+    height: 0;
+    bottom: 0;
+    border-top: 56.5px solid rgb(197, 197, 197);
+    border-left: 100px solid transparent;
+    border-right: 100px solid transparent;
+ 
+  }
+
+ 
