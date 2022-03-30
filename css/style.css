@@ -52,26 +52,22 @@ body{
 
 
 
-  * {
-    box-sizing: border-box;
-  }
+
   .flag  {
     margin: 0 5% 0 5%;
     height: 56px;
     position: relative;
-
-  }
-  .flag:after {
-    width:100%;
-    content: ' ';
-    position: absolute;
-    left: 0;
-    height: 0;
-    bottom: 0;
     border-top: 56px solid rgb(197, 197, 197);
-    border-left: 100px solid transparent;
-    border-right: 100px solid transparent; 
+    border-left: 80px solid transparent;
+    border-right: 80px solid transparent;
+    filter: 
+ drop-shadow(-0.01em 0.01em 0.01em rgb(114, 114, 114))
+ drop-shadow(0.01em 1px 0.01em rgb(114, 114, 114));
   }
+
+
+
+
 
 .flag2 {
   margin: 0.5% 5% 0 5%;
@@ -87,13 +83,57 @@ body{
   height: 0;
   bottom: 0;
   border-bottom: 56px solid rgb(197, 197, 197);
-  border-left: 100px solid transparent;
-  border-right: 100px solid transparent; 
+  border-left: 80px solid transparent;
+  border-right: 80px solid transparent;
 }
 
 .test{
   margin: 0% 5% 0 5%;
   background-color: rgb(197, 197, 197);
   height:500px;
-
 }
+
+
+.test2  {
+  margin: 0 5% 0 5%;
+  height: 56px;
+  position: relative;
+  background-color: rgb(197, 197, 197);
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.test3 {
+  margin: 1% 5% 0 5%;
+  height: 56px;
+  position: relative;
+  background-color: rgb(197, 197, 197);
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.test4{
+  height:200px;
+  margin: 0% 5% 0 5%;
+  background-color: rgb(197, 197, 197);
+}
+
+.test5  {
+  margin: 0 5% 2% 5%;
+  height: 56px;
+  position: relative;
+  border-top: 56px solid rgb(197, 197, 197);
+  border-left: 80px solid transparent;
+  border-right: 80px solid transparent;
+}
+
+
+
+
+
+
+
+
+
+
+
