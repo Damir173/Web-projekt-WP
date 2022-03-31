@@ -12,40 +12,40 @@
 <body>  
 
 
+  <nav class="navbar  navbar-expand-lg navbar-light bg-gradient rounded-top ">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Mini logo</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-center " id="navbarSupportedContent">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item-a text-center  ">
+            <a class="nav-link active fw-bold text-dark  " aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item text-center">
+            <a class="nav-link " href="#">Link</a>
+          </li>
+          <li class="nav-item dropdown text-center">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Dropdown
+            </a>
+            <ul class="dropdown-menu " aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
+         
+        </ul>
 
+      </div>
+    </div>
+  </nav>
 
   <div class="slideshow-container">
-    <nav class="navbar  navbar-expand-lg navbar-light  rounded-top  ">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">Mini logo</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse justify-content-center " id="navbarSupportedContent">
-          <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-            <li class="nav-item-a text-center  ">
-              <a class="nav-link active fw-bold text-dark  " aria-current="page" href="#">Home</a>
-            </li>
-            <li class="nav-item text-center">
-              <a class="nav-link " href="#">Link</a>
-            </li>
-            <li class="nav-item dropdown text-center">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Dropdown
-              </a>
-              <ul class="dropdown-menu " aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
-              </ul>
-            </li>
-           
-          </ul>
-  
-        </div>
-      </div>
-    </nav>
+
     <div class="mySlides fade">
       <img src= "https://www.watermeetsmoney.com/wp-content/uploads/2017/11/Header-background-2.png" style="width:100%; height:299px;">
     </div>
@@ -58,46 +58,44 @@
       <img src="https://244194-752526-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/Background-Header-1.jpg" style="width:100%; height:299px;">
     </div>
     
+    </div>
 
+    <script>
+      let slideIndex = 0;
+      showSlides();
+      function showSlides() {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";  
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {slideIndex = 1}    
+      
+        slides[slideIndex-1].style.display = "block";  
+        setTimeout(showSlides, 5000); // Change image every 2 seconds
+      }
+      </script>
 
-  </div>
-
-
-
-<<<<<<< HEAD
 <div class="flag"> 
-  
 </div>
 
+<div class="srijeda"></div>
 
-=======
-<div class="flag"></div>
->>>>>>> parent of 3ca15cf (Uspio border)
+
 <div class="flag2"></div>
-
 <div class="test"></div>
+<div class="test2"></div>
+<div class="test3"></div>
+<div class="test4"></div>
+<div class="test5"></div>
+
+
+
+
 </body>
 
 
-
-
-
-<script>
-  let slideIndex = 0;
-  showSlides();
-  function showSlides() {
-    let i;
-    let slides = document.getElementsByClassName("mySlides");
-    
-    for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";  
-    }
-    slideIndex++;
-    if (slideIndex > slides.length) {slideIndex = 1}    
-  
-    slides[slideIndex-1].style.display = "block";  
-    setTimeout(showSlides, 5000); // Change image every 2 seconds
-  }
-  </script>
 
 </html>
