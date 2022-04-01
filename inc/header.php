@@ -1,3 +1,7 @@
+<?php
+include "functions/init.php"
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -20,23 +24,21 @@
       </button>
       <div class="collapse navbar-collapse justify-content-center " id="navbarSupportedContent">
         <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-          <li class="nav-item-a text-center  ">
-            <a class="nav-link active fw-bold text-dark  " aria-current="page" href="#">Home</a>
+          <li class="nav-item text-center  ">
+          
           </li>
           <li class="nav-item text-center">
-            <a class="nav-link " href="#">Link</a>
+            <a class="nav-link " href="index.php">Home</a>
           </li>
-          <li class="nav-item dropdown text-center">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Dropdown
-            </a>
-            <ul class="dropdown-menu " aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
           </li>
+          <li class="nav-item text-center">
+            <a class="nav-link " href="login.php">Login</a>
+          </li>
+          <li class="nav-item text-center">
+            <a class="nav-link " href="register.php">Register</a>
+          </li>
+          
+         
          
         </ul>
 
@@ -57,8 +59,11 @@
     <div class="mySlides fade">
       <img src="https://244194-752526-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/Background-Header-1.jpg" style="width:100%; height:299px;">
     </div>
-    
     </div>
+
+    <div class="flag"> </div>
+
+
 
     <script>
       let slideIndex = 0;
@@ -78,24 +83,11 @@
       }
       </script>
 
-<div class="flag"> 
-</div>
 
-<div class="srijeda"></div>
-
-
-<div class="flag2"></div>
-<div class="test"></div>
-<div class="test2"></div>
-<div class="test3"></div>
-<div class="test4"></div>
-<div class="test5"></div>
 
 
 
 
 </body>
-
-
 
 </html>

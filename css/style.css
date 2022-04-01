@@ -2,6 +2,8 @@
     margin: 1.5% 5% 0 5%;
     border: 1px solid rgb(133, 133, 133);
     background-color: rgb(197, 197, 197) ;
+    filter: 
+    drop-shadow(1px 1em 1em rgb(114, 114, 114));
 }
 
 body{
@@ -9,9 +11,9 @@ body{
 }
 
 
-.nav-item-a  {
+.nav-link-a {
 
-    border: 1px solid rgba(34, 118, 187, 0.829);
+    border: 1px solid rgba(34, 118, 187, 0.829) ;
     background-color: rgba(69, 164, 243, 0.829) ;
     border-radius: 5px;
 }
@@ -30,6 +32,8 @@ body{
   border-left: 1px solid rgb(133, 133, 133); 
   border-bottom: 1px solid rgb(133, 133, 133); 
   border-right: 1px solid rgb(133, 133, 133);
+  filter: 
+  drop-shadow(1px 1em 1em rgb(114, 114, 114));
 }
 .mySlides img{
     height: 300px;
@@ -67,66 +71,53 @@ body{
 
 
 
+  .flag2  {
+    margin: 1% 30% 0 30%;
+    height: 56px;
+    position: relative;
+    border-bottom: 56px solid rgb(197, 197, 197);
+    border-left: 80px solid transparent;
+    border-right: 80px solid transparent;
+    filter: 
+ drop-shadow(-0.01em 0.01em 0.01em rgb(114, 114, 114))
+ drop-shadow(0.01em -1px 0.01em rgb(114, 114, 114));
+
+  }
 
 
-.flag2 {
-  margin: 0.5% 5% 0 5%;
-  height: 56px;
-  position: relative;
-}
 
-.flag2:after {
-  width:100%;
-  content: ' ';
-  position: absolute;
-  left: 0;
-  height: 0;
-  bottom: 0;
-  border-bottom: 56px solid rgb(197, 197, 197);
-  border-left: 80px solid transparent;
-  border-right: 80px solid transparent;
-}
 
-.test{
-  margin: 0% 5% 0 5%;
+/* register */
+.reg {
+  margin: 0% 30% 0 30%;
+  padding-top:20px;
   background-color: rgb(197, 197, 197);
-  height:500px;
+  border-left: 1px solid rgb(114, 114, 114);
+  border-right: 1px solid rgb(114, 114, 114);
+  border-bottom: 1px solid rgb(114, 114, 114);
+  filter: 
+drop-shadow(1px 1em 1em rgb(114, 114, 114));
+
+}
+
+form input{
+display: block;
+margin: auto;
+margin-top: 7px;
+margin-bottom: 10px;
+width:300px;
+height:40px;
+
+}
+
+.flag2 p{
+  padding-top:15px;
+  text-align: center;
+  text-transform: uppercase;
+
 }
 
 
-.test2  {
-  margin: 0 5% 0 5%;
-  height: 56px;
-  position: relative;
-  background-color: rgb(197, 197, 197);
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
-}
-
-.test3 {
-  margin: 1% 5% 0 5%;
-  height: 56px;
-  position: relative;
-  background-color: rgb(197, 197, 197);
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-}
-
-.test4{
-  height:200px;
-  margin: 0% 5% 0 5%;
-  background-color: rgb(197, 197, 197);
-}
-
-.test5  {
-  margin: 0 5% 2% 5%;
-  height: 56px;
-  position: relative;
-  border-top: 56px solid rgb(197, 197, 197);
-  border-left: 80px solid transparent;
-  border-right: 80px solid transparent;
-}
-
-
-
+  
+/* register end */
 
