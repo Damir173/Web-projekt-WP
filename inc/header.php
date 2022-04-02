@@ -11,6 +11,7 @@ include "functions/init.php"
     <link rel="stylesheet" href="css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
   </head>
 
 <body>  
@@ -63,31 +64,26 @@ include "functions/init.php"
 
     <div class="flag"> </div>
 
-
-
-    <script>
-      let slideIndex = 0;
-      showSlides();
-      function showSlides() {
-        let i;
-        let slides = document.getElementsByClassName("mySlides");
-        
-        for (i = 0; i < slides.length; i++) {
-          slides[i].style.display = "none";  
-        }
-        slideIndex++;
-        if (slideIndex > slides.length) {slideIndex = 1}    
-      
-        slides[slideIndex-1].style.display = "block";  
-        setTimeout(showSlides, 5000); // Change image every 2 seconds
-      }
-      </script>
-
-
-
-
-
-
 </body>
 
 </html>
+
+
+
+<script>
+  let slideIndex = 0;
+showSlides();
+function showSlides() {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+
+  slides[slideIndex-1].style.display = "block";  
+  setTimeout(showSlides, 5000); // Change image every 2 seconds
+}
+</script>

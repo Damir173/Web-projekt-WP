@@ -1,3 +1,5 @@
+
+
 .navbar{
     margin: 1.5% 5% 0 5%;
     border: 1px solid rgb(133, 133, 133);
@@ -50,16 +52,11 @@ body{
   }
 
 
-  
   /* slideshow kraj */
-
-
-
-
-
   .flag  {
-    margin: 0 5% 0 5%;
+    margin: 0 5% 2% 5%;
     height: 56px;
+
     position: relative;
     border-top: 56px solid rgb(197, 197, 197);
     border-left: 80px solid transparent;
@@ -69,55 +66,72 @@ body{
  drop-shadow(0.01em 1px 0.01em rgb(114, 114, 114));
   }
 
-
-
-  .flag2  {
-    margin: 1% 30% 0 30%;
-    height: 56px;
-    position: relative;
-    border-bottom: 56px solid rgb(197, 197, 197);
-    border-left: 80px solid transparent;
-    border-right: 80px solid transparent;
-    filter: 
- drop-shadow(-0.01em 0.01em 0.01em rgb(114, 114, 114))
- drop-shadow(0.01em -1px 0.01em rgb(114, 114, 114));
-
-  }
-
-
-
-
 /* register */
+
+.regh{
+  height: 50px;
+  background-color: rgba(63, 193, 193, 0.724);
+  border: 1px solid rgb(131, 130, 130);
+  font-weight: bold;
+  font-size: 23px;
+  color:rgb(78, 78, 78);
+}
+
+
+#reghp{
+  text-align: center;
+  line-height: 50px;
+}
+
+
+.regv {
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+
+
 .reg {
-  margin: 0% 30% 0 30%;
-  padding-top:20px;
+  padding-top: 10px;
   background-color: rgb(197, 197, 197);
-  border-left: 1px solid rgb(114, 114, 114);
-  border-right: 1px solid rgb(114, 114, 114);
-  border-bottom: 1px solid rgb(114, 114, 114);
+  border: 1px solid rgb(131, 130, 130);
   filter: 
 drop-shadow(1px 1em 1em rgb(114, 114, 114));
+padding-right:1%;
+padding-left: 1%;
+}
+
+form{
+  padding-bottom:15px;
 
 }
 
 form input{
 display: block;
-margin: auto;
-margin-top: 7px;
-margin-bottom: 10px;
-width:300px;
-height:40px;
-
+width: 100%;
 }
 
-.flag2 p{
-  padding-top:15px;
+#regbutton{
+
+  background-color: rgba(63, 193, 193, 0.724);
+  width:50% !important;
+  margin: auto;
+  filter: 
+  drop-shadow(5px 5px 5px rgb(172, 172, 172));
+  font-weight: bold;
+  color:rgb(32, 32, 32);
+  margin-top:10px;
+}
+
+.uspjesnaReg{
+  background-color: rgba(63, 193, 193, 0.724);
+  margin-bottom:30px;
   text-align: center;
-  text-transform: uppercase;
-
+  height:30px;
+  line-height: 30px;
+  font-weight: bold;
+  border: 1px solid rgb(114, 114, 114)
 }
 
-
-  
 /* register end */
 

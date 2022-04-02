@@ -1,31 +1,60 @@
 <?php include "inc/header.php"; ?>
 
-
 <?php 
-if($_SERVER['REQUEST_METHOD'] == "POST") {
-    $first_name = escape($_POST['first_name']);
-    $last_name = escape($_POST['last_name']);
-    $username = escape($_POST['username']);
-    $email = escape($_POST['email']);
-    $password = escape($_POST['password']);
-    $password = password_hash($password, PASSWORD_DEFAULT);
 
-    $sql = "INSERT INTO users(first_name,last_name,username,profile_image,email,password, id_group) ";
-    $sql .= "VALUES('$first_name','$last_name','$username','uploads/default.jpg','$email','$password', '1')";
-    confirm(query($sql));
-}
+create_user();  
 
-?>
-
-<div class="flag2"><p> Login</p></div>
+    ?>
+   
+<div class="regv col-md-7 mx-auto " >
+<div class ="regh"> <p id="reghp"> R E G I S T R A C I J A </p> </div>
 <form  method="POST" class="reg" >
-    <input type = "text" name="first_name" placeholder="First Name" id="first_name" required>
-    <input type = "text" name="last_name" placeholder="Last Name" id="last_name" required>
+
+    <div class="row"> 
+    <div class = "col-md-4 mx-auto"> <p class="regp">Name:</p> </div>
+    <div class="col-md-8">
+    <input type = "text" name="first_name" placeholder="First Name"  required>
+    </div>
+    </div>
+    <div class="row"> 
+    <div class = "col-md-4 mx-auto"> <p class="regp">Last name:</p> </div>
+    <div class="col-md-8">
+    <input type = "text" name="last_name" placeholder="Last Name"  required>
+    </div>
+    </div>
+    <div class="row"> 
+    <div class = "col-md-4 mx-auto"> <p class="regp">Username:</p> </div>
+    <div class="col-md-8">
     <input type = "text" name="username" placeholder="Username" required>
-    <input type = "email" name="email" placeholder="Email" required>
+    </div>
+    </div>
+    <div class="row"> 
+    <div class = "col-md-4 mx-auto"> <p class="regp">E-mail:</p> </div>
+    <div class="col-md-8">
+    <input type = "email" name="email" placeholder="Email" required>    
+    </div>
+    </div>
+    <div class="row"> 
+    <div class = "col-md-4 mx-auto"> <p class="regp">Password:</p> </div>
+    <div class="col-md-8">
     <input type = "password" name="password" placeholder="Password" required>
+    </div>
+    </div>
+    <div class="row"> 
+    <div class = "col-md-4 mx-auto"> <p class="regp">Confirm password:</p> </div>
+    <div class="col-md-8">
     <input type = "password" name="confirm_password" placeholder="Confirm password" required>
-    <input type = "submit" name="register-submit" placeholder="Register now" >
+    </div>
+    </div>
+  
+    <input type = "submit" name="register-submit" placeholder="Register now" id="regbutton">
+ 
         
 </form>
+</div>
+
+
+
+
+
 
