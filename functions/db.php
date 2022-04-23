@@ -17,3 +17,13 @@ function confirm($result) {
         die("QUERY FAILED" .mysqli_error($con));
     }
 }
+
+define( "DB_DSN", "mysql:host=localhost;dbname=zrssb" );
+define( "DB_USERNAME", "root" );
+define( "DB_PASSWORD", "" );
+define( "CLASS_PATH", "classes" );
+define( "TEMPLATE_PATH", "templates" );
+define( "HOMEPAGE_NUM_ARTICLES", 5 );
+define( "ADMIN_USERNAME", "admin" );
+define( "ADMIN_PASSWORD", "mypass" );
+require( CLASS_PATH . "/Article.php" );

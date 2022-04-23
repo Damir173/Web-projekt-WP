@@ -26,11 +26,11 @@ include "functions/init.php"
       <div class="collapse navbar-collapse justify-content-center " id="navbarSupportedContent">
         <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
           <li class="nav-item text-center  ">
-          
           </li>
           <li class="nav-item text-center">
             <a class="nav-link " href="index.php">Home</a>
           </li>
+          <?php if(!isset($_SESSION['email'])): ?>
           </li>
           <li class="nav-item text-center">
             <a class="nav-link " href="login.php">Login</a>
@@ -38,8 +38,21 @@ include "functions/init.php"
           <li class="nav-item text-center">
             <a class="nav-link " href="register.php">Register</a>
           </li>
+            <?php else: ?>
+          <li class="nav-item profile-name text-center">
+            <a class="nav-link" href="profile.php"><?php $user = get_user(); echo $user['username'];?>  </a>
+          </li>
+          <li class="nav-item text-center">
+            <a class="nav-link" href="logout.php">Logout</a>
+          </li>
+           <?php endif; ?>
           
-         
+         <?php if( (isset($_SESSION['email'])) && $user['id_group'] == '1'  ): ?>
+
+          <li class="nav-item text-center">
+            <a class="nav-link" href="administration.php">Administracija</a>
+          </li>
+          <?php endif; ?>
          
         </ul>
 
@@ -63,8 +76,8 @@ include "functions/init.php"
     </div>
 
     <div class="flag"> </div>
-
 </body>
+
 
 </html>
 
