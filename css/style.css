@@ -66,6 +66,7 @@ body{
  drop-shadow(0.01em 1px 0.01em rgb(114, 114, 114));
   }
 
+  
 /* register */
 
 .regh{
@@ -75,6 +76,7 @@ body{
   font-weight: bold;
   font-size: 23px;
   color:rgb(78, 78, 78);
+  margin-top:20px;
 }
 
 
@@ -89,10 +91,13 @@ body{
   padding-right: 10%;
 }
 
-
+.regp {
+  font-weight: bold;
+  margin-bottom: 0px;
+}
 
 .reg {
-  padding-top: 10px;
+  padding-top: 20px;
   background-color: rgb(197, 197, 197);
   border: 1px solid rgb(131, 130, 130);
   filter: 
@@ -103,12 +108,13 @@ padding-left: 1%;
 
 form{
   padding-bottom:15px;
-
 }
 
 form input{
 display: block;
 width: 100%;
+
+
 }
 
 #regbutton{
@@ -133,5 +139,27 @@ width: 100%;
   border: 1px solid rgb(114, 114, 114)
 }
 
+
+.upozorenje {
+  background-color: rgba(63, 193, 193, 0.724) ;
+  font-weight: bold;
+  text-align: center;
+  width:50%;
+  border: 1px solid rgb(114, 114, 114);
+  margin-bottom: 5px;
+}
+
 /* register end */
+
+.aspost {
+  background-color: rgba(63, 193, 193, 0.724) !important ;
+
+}
+
+.rowpost{
+    margin-left: 5% !important ;
+  margin-right: 5% !important;
+}
+
+
 

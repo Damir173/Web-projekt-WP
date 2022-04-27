@@ -1,10 +1,8 @@
-<?php include "inc/header.php"; ?>
-
+<?php include "inc/header.php";
+login_check_pages(); ?>
 <?php 
 
-create_user();  
-
-    ?>
+validate_user_registration();    ?>
    
 <div class="regv col-md-7 mx-auto " >
 <div class ="regh"> <p id="reghp"> R E G I S T R A C I J A </p> </div>
@@ -47,7 +45,7 @@ create_user();
     </div>
     </div>
   
-    <input type = "submit" name="register-submit" placeholder="Register now" id="regbutton">
+    <input type = "submit" name="register-submit" value="Register now" id="regbutton">
  
         
 </form>
