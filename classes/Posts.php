@@ -120,13 +120,17 @@ class Posts
   public function delete() {
 
     if ( is_null( $this->id ) ) trigger_error ( "Posts::delete(): Attempt to delete an Posts object that does not have its ID property set.", E_USER_ERROR );
-
+    $user = get_user();
+    if( (isset($_SESSION['email'])) && $user['id_group'] == '1'  ) {
     $conn = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );
     $st = $conn->prepare ( "DELETE FROM Posts WHERE id = :id LIMIT 1" );
     $st->bindValue( ":id", $this->id, PDO::PARAM_INT );
     $st->execute();
     $conn = null;
   }
+
+
+}
 
 
 }

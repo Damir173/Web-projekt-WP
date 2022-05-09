@@ -187,6 +187,7 @@ function user_restrictions()
 
 function get_user($id = NULL)
 {
+    error_reporting(E_ERROR | E_PARSE);
     if ($id != NULL) {
         $query = "SELECT * FROM users WHERE id=" . $id;
         $result = query($query);
@@ -204,6 +205,37 @@ function get_user($id = NULL)
             return $result->fetch_assoc();
         } else {
             return "User not found.";
+        }
+    }
+}
+
+
+function create_post()
+{
+    $errors = [];
+    if ($_SERVER['REQUEST_METHOD'] == "POST") {
+        $post_content = clean($_POST['post_content']);
+        $naslov = clean($_POST['naslov']);
+        $sazetak = clean($_POST['sazetak']);
+        if (strlen($post_content) > 500) {
+            $errors[] = "Your post content is too long!";
+        }
+
+        if (!empty($errors)) {      
+            foreach ($errors as $error) {
+                echo '<div class="alert">' . $error . '</div>';
+            }
+        } else {
+   
+            $user = get_user();
+            $user_id = $user['id'];     
+
+            $sql = "INSERT INTO posts(user_id, title, summary , content ) ";
+            $sql .= "VALUES($user_id , '$naslov', '$sazetak', '$post_content')";
+            confirm(query($sql));
+            redirect('index.php');
+
+            
         }
     }
 }

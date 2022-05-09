@@ -28,8 +28,6 @@ function viewPosts() {
   if ( !isset($_GET["PostsId"]) || !$_GET["PostsId"] ) {
     homepage();
     return;
-
-  
   }
 
   $results = array();
