@@ -22,7 +22,7 @@ function set_message($message)
 function display_message()
 {
     if (isset($_SESSION['message'])) {
-        echo '<div class="upozorenje col-md-3 mx-auto">' . $_SESSION['message'] . '</div>';
+        echo '<div class="upozorenje">' . $_SESSION['message'] . '</div>';
         unset($_SESSION['message']);
     }
 }
@@ -90,7 +90,7 @@ function validate_user_registration()
         }
         if (!empty($errors)) {
             foreach ($errors as $error) {
-                echo '<div class="upozorenje col-md-3 mx-auto">' . $error . '</div>';
+                echo '<div class="upozorenje">' . $error . '</div>';
             }
         } else {
             $first_name = filter_var($first_name, FILTER_SANITIZE_STRING);
@@ -136,12 +136,12 @@ function validate_user_login()
             if (user_login($email, $password)) {
                 redirect('index.php');
             } else {
-                $errors[] = "Your email or password is incorrect. please try again";
+                $errors[] = "Neispravna e-mail adresa ili lozinka!";
             }
         }
         if (!empty($errors)) {
             foreach ($errors as $error) {
-                echo '<div class="upozorenje col-md-3 mx-auto">' . $error . '</div>';
+                echo '<div class="upoz col-xs-12 col-md-4 pl-0 mx-auto"> <img class="imica" src="../Web-projekt-WP/images/usklicnik.png"></img> <span class="erorispan">' . $error . '</span></div>';
             }
         }
     }
