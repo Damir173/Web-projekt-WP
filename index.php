@@ -1,4 +1,4 @@
-<?php include "inc/header.php";
+<?php $page = 'index'; include "inc/header.php";
 
 
 $action = isset( $_GET['action'] ) ? $_GET['action'] : "";

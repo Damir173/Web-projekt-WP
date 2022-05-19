@@ -8,17 +8,15 @@
     drop-shadow(1px 1em 1em rgb(114, 114, 114));
 }
 
-body{
+body{   
     background-color: rgb(231, 231, 231) !important;
     overflow-x: hidden;
 }
 
 
-.nav-link-a {
+.aktivni, .nav-link:hover {
+font: weight 1px; 
 
-    border: 1px solid rgba(34, 118, 187, 0.829) ;
-    background-color: rgba(69, 164, 243, 0.829) ;
-    border-radius: 5px;
 }
 
 .navbar-toggler{
@@ -54,8 +52,8 @@ body{
 
 
   /* slideshow kraj */
-  .flag  {
-    margin: 0 5% 2% 5%;
+  .flag, .flag2  {
+    margin: 0 5% 1% 5%;
     height: 56px;
 
     position: relative;
@@ -65,6 +63,17 @@ body{
     filter: 
  drop-shadow(-0.01em 0.01em 0.01em rgb(114, 114, 114))
  drop-shadow(0.01em 1px 0.01em rgb(114, 114, 114));
+  }
+
+  .flag2{
+    margin-top:2% !important;
+    border-top:0;
+    border-bottom: 56px solid rgb(197, 197, 197);
+    filter: 
+    drop-shadow(0em -0.01em 0em rgb(114, 114, 114));
+    margin:auto;
+    width: 100%;
+    
   }
 
   
@@ -118,17 +127,6 @@ width: 100%;
 
 } */
 
-#regbutton{
-
-  background-color: rgba(63, 193, 193, 0.724);
-  width:50% !important;
-  margin: auto;
-  filter: 
-  drop-shadow(5px 5px 5px rgb(172, 172, 172));
-  font-weight: bold;
-  color:rgb(32, 32, 32);
-  margin-top:10px;
-}
 
 .uspjesnaReg{
   background-color: rgba(63, 193, 193, 0.724);
@@ -168,7 +166,7 @@ margin-right:20%;
 
 /* novi log in */
 
-.user_card {
+.user_card, .user_card_reg, .user_card_admin {
   height: 400px;
   width: 400px;
   margin-top:100px;
@@ -176,15 +174,28 @@ margin-right:20%;
   background: rgb(199, 198, 198);
   position: relative;
   display: flex;
-  justify-content: center;
-  flex-direction: column;
+  justify-content: space-between; 
+   flex-direction: column;
   padding: 10px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border: 1px solid gray;
+}
 
 
+.user_card_admin{
+  border-top:0px;
+  border-bottom: 0px;
+  height:fit-content;
+  margin-top:0 !important;
+  margin-bottom: 30px !important;
+  width:100%;
+  padding:0px;
+}
+
+.user_card_reg{
+  height:550px;
 }
 .brand_logo_container {
   position: absolute;
@@ -201,18 +212,31 @@ margin-right:20%;
   height: 197px;
   width: 197px;
   border-radius: 50%;
+  transition: transform .7s ease-in-out;
+  image-rendering: pixelated;
+
+}
+.brand_logo:hover{
+  transform:rotate(360deg);
+  image-rendering: pixelated;
 }
 .form_container {
   margin-top: 100px;
   width: 100% !important;
 }
-.login_btn {
+.form_container_a{
+  margin-top:2%;
+}
+
+.login_btn, #regbutton {
   width: 100%;
   background: rgba(23, 23, 23, 0.724) !important;
   color: white !important;
   padding-bottom:10px;
   border: 1px solid gray;
-}
+  border-radius: 5px;;
+  font-weight: bold;
+padding-bottom:2px;}
 
 .login_btn:focus {
   box-shadow: none !important;
@@ -241,8 +265,8 @@ margin-right:20%;
 
 
 .imica{
-  width:40px;
-  height:40px;
+  width:30px;
+  height:30px;
   background-color: gray;
 }
 
@@ -253,10 +277,93 @@ margin-right:20%;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
   margin-bottom:5px;
-  width: fit-content;
 }
 
 .erorispan{
   padding-left:5px;
 font-weight: bold;
 }
+
+
+/* administratorsko postanje*/
+
+
+
+.admin4{
+  width:100%;
+
+}
+
+.admin4 input{
+  width:80%;
+}
+
+textarea{
+  width:80%;
+}
+
+
+
+#sub{
+  display: block !important;
+  margin:auto !important;
+}
+
+.cf{
+  padding-left:0 !important;
+  padding-right:0 !important;
+
+}
+
+.input-group{
+  justify-content: center;
+}
+
+.administratoski{
+  margin:auto;
+  margin-top:0 !important;
+  padding-top:0 !important;
+  margin-bottom:50px;
+ 
+}
+
+.adminwp{
+  margin:auto; 
+
+}
+
+.col-md-6, .col-md-12, .col-xs-12{
+  padding-left:15px !important;
+  padding-right:15px !important;
+}
+
+.slikawp{
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+
+}
+
+#adminobavijest{
+  padding-top:10px;
+  text-align:center;
+  font-weight: bold;
+  margin-bottom:0px;
+  color:rgb(74, 74, 74);
+}
+
+.objavipost{
+  height:30px;
+  background-image: url(../images/adminwpdonji.png);
+}
+
+#sub{
+  margin-bottom:15px !important;
+  margin-top:15px !important;
+  width: 50%;;
+
+}
+
+
+
+
+/*  */

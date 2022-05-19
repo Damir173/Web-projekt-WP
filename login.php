@@ -1,4 +1,4 @@
-<?php include "inc/header.php";
+<?php $page = 'login'; include "inc/header.php";
 
 
 display_message();
@@ -20,7 +20,7 @@ login_check_pages();
                 <form  method="POST"  >
 						<div class="input-group mb-3">
 							<div class="input-group-append">
-								<span class="input-group-text"><i class="fas fa-user"></i></span>
+								<span class="input-group-text"><i class="fas fa-envelope"></i></span>
 							</div>
                             <input type="email" class="mail" name="email" placeholder="Email" required>
 						</div>
@@ -44,11 +44,12 @@ login_check_pages();
 		
 				<div class="mt-4">
 					<div class="d-flex justify-content-center links">
-						Don't have an account? <a href="login.php" class="ml-2">Sign Up</a>
+						Nemate račun? <a href="register.php" class="ml-2">Registrirajte se</a>
 					</div>
 				
 				</div>
 			</div>
+
 		</div>
 	</div>
 

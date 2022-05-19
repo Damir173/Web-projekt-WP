@@ -43,7 +43,7 @@ function email_exists($email)
 
 function user_exists($user)
 {
-    $user = filter_var($user, FILTER_SANITIZE_STRING);
+    $user = filter_var($user, FILTER_SANITIZE_SPECIAL_CHARS);
     $query = "SELECT id FROM users WHERE username = '$user'";
     $result = query($query);
 
@@ -65,39 +65,39 @@ function validate_user_registration()
         $password = clean($_POST['password']);
         $confirm_password = clean($_POST['confirm_password']);
         if (strlen($first_name) < 3) {
-            $errors[] = "Your First Name cannot be less then 3 characters";
+            $errors[] = "Ime ne može biti manje od 3 znaka!";
         }
         if (strlen($last_name) < 3) {
-            $errors[] = "Your Last Name cannot be less then 3 characters";
+            $errors[] = "Prezime ne može biti manje od 3 znaka!";
         }
         if (strlen($username) < 3) {
-            $errors[] = "Your Username cannot be less then 3 characters";
+            $errors[] = "Korisničko ime ne može biti manje od 3 znaka!";
         }
         if (strlen($username) > 20) {
-            $errors[] = "Your Username cannot be bigger then 20 characters";
+            $errors[] = "Korisničko ime ne može biti veće od 20 znakova!";
         }
         if (email_exists($email)) {
-            $errors[] = "Sorry that Email is already is taken";
+            $errors[] = "E-mail adresa je već zauzeta!";
         }
         if (user_exists($username)) {
-            $errors[] = "Sorry that Username is already is taken";
+            $errors[] = "Korisničko ime je već zauzeto!";
         }
         if (strlen($password) < 8) {
-            $errors[] = "Your Password cannot be less then 8 characters";
+            $errors[] = "Lozinka ne može biti manja od 8 znakova!";
         }
         if ($password != $confirm_password) {
-            $errors[] = "The password was not confirmed correctly";
+            $errors[] = "Lozinke se ne podudaraju!";
         }
         if (!empty($errors)) {
             foreach ($errors as $error) {
-                echo '<div class="upozorenje">' . $error . '</div>';
+                echo '<div class="upoz col-xs-12 col-md-4 pl-0 mx-auto"> <img class="imica" src="../Web-projekt-WP/images/usklicnik.png"></img> <span class="erorispan">' . $error . '</span></div>';
             }
         } else {
-            $first_name = filter_var($first_name, FILTER_SANITIZE_STRING);
-            $last_name = filter_var($last_name, FILTER_SANITIZE_STRING);
-            $username = filter_var($username, FILTER_SANITIZE_STRING);
+            $first_name = filter_var($first_name, FILTER_SANITIZE_SPECIAL_CHARS);
+            $last_name = filter_var($last_name, FILTER_SANITIZE_SPECIAL_CHARS);
+            $username = filter_var($username, FILTER_SANITIZE_SPECIAL_CHARS);
             $email = filter_var($email, FILTER_SANITIZE_EMAIL);
-            $password = filter_var($password, FILTER_SANITIZE_STRING);
+
             create_user($first_name, $last_name, $username, $email, $password);
         }
     }
@@ -111,8 +111,8 @@ function create_user($first_name, $last_name, $username, $email, $password)
     $email = escape($email);
     $password = escape($password);
     $password = password_hash($password, PASSWORD_DEFAULT);
-    $sql = "INSERT INTO users(first_name,last_name,username,profile_image,email,password) ";
-    $sql .= "VALUES('$first_name','$last_name','$username','uploads/default.jpg','$email','$password')";
+    $sql = "INSERT INTO users(first_name,last_name,username,email,password) ";
+    $sql .= "VALUES('$first_name','$last_name','$username','$email','$password')";
     confirm(query($sql));
     set_message("Uspješna registracija! Molimo Vas ulogirajte se.");
     redirect('login.php');
@@ -150,7 +150,7 @@ function validate_user_login()
 
 function user_login($email, $password)
 {
-    $password = filter_var($password, FILTER_SANITIZE_STRING);
+
     $email = filter_var($email, FILTER_SANITIZE_EMAIL);
 
     $query = "SELECT * FROM users WHERE email='$email'";
@@ -240,5 +240,22 @@ function create_post()
     }
 }
 
+
+
+
+function user_posts($id = NULL)
+{
+    error_reporting(E_ERROR | E_PARSE);
+    if ($id != NULL) {
+        $query = "SELECT * FROM posts WHERE posts.user_id=" . $id;
+        $result = query($query);
+
+        if ($result->num_rows > 0) {
+            return $result->num_rows;
+        } else {
+            return "Nema objavljenih postova!";
+        }
+    } 
+}
 
 

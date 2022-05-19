@@ -28,12 +28,12 @@ include "functions/init.php"
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav">
-          <li class="nav-item">
-          <a class="nav-link " href="index.php">Home</a>
+     <li class="nav-item <?php if($page =='index'){echo 'active';}?>">
+          <a class="nav-link" href="index.php">Home</a>
           </li>
-        
-          <?php  $user = get_user(); if( (isset($_SESSION['email'])) && $user['id_group'] == '1'  ): ?>
-            <li class="nav-item">
+ 
+         <?php  $user = get_user(); if( (isset($_SESSION['email'])) && $user['id_group'] == '1'  ): ?>
+            <li class="nav-item <?php if($page =='administration'){echo 'active';}?>">
           <a class="nav-link " href="administration.php">Administration</a>
           </li>
           <?php endif; ?>
@@ -52,14 +52,14 @@ include "functions/init.php"
         
           <?php if(!isset($_SESSION['email'])): ?>
           
-          <li class="nav-item">
-            <a class="nav-link " href="login.php">Login</a>
+          <li class="nav-item <?php if($page =='login'){echo 'active';}?>">
+            <a class="nav-link" href="login.php">Login</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item <?php if($page =='register'){echo 'active';}?>">
             <a class="nav-link " href="register.php">Register</a>
           </li>
             <?php else: ?>
-          <li class="nav-item profile-name">
+          <li class="nav-item profile-name <?php if($page =='profile'){echo 'active';}?>">
             <a class="nav-link" href="profile.php"><?php $user = get_user(); echo $user['username'];?>  </a>
           </li>
    
@@ -111,4 +111,8 @@ function showSlides() {
   slides[slideIndex-1].style.display = "block";  
   setTimeout(showSlides, 5000); // Change image every 2 seconds
 }
+
+
+
+
 </script>
