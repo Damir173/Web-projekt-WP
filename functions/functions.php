@@ -259,3 +259,47 @@ function user_posts($id = NULL)
 }
 
 
+function updatepodatke(){
+
+    $errors = [];
+
+    if ($_SERVER['REQUEST_METHOD'] == "POST") {
+        $pw_old = clean($_POST['old_password']);
+        $pw = clean($_POST['password']);
+        $pw_con = clean($_POST['confirm_password']);
+        $user = get_user();
+        $user_id = $user['id'];
+        $user_pw = $user['password'];
+
+        if( !(password_verify($pw_old, $user_pw))) {
+                $errors[] = "Niste dobro unijeli staru lozinku!";
+            }
+
+
+        if ($pw != $pw_con) {
+            $errors[] = "Lozinke se ne podudaraju!";
+        }
+
+        if (strlen($pw) < 8) {
+            $errors[] = 'Lozinka mora biti dulja od 8 znakova';
+        }
+
+        if (!empty($errors)) {      
+            foreach ($errors as $error) {
+                echo '<div class="alert">' . $error . '</div>';
+            }
+        }
+
+
+        else{
+            $password = escape($pw);
+            $password = password_hash($pw, PASSWORD_DEFAULT);
+            $sql = "UPDATE users SET password = '$password' WHERE users.id = '$user_id'";
+            confirm(query($sql));
+        }
+    
+    }
+
+
+
+}
