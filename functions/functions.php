@@ -111,8 +111,8 @@ function create_user($first_name, $last_name, $username, $email, $password)
     $email = escape($email);
     $password = escape($password);
     $password = password_hash($password, PASSWORD_DEFAULT);
-    $sql = "INSERT INTO users(first_name,last_name,username,email,password) ";
-    $sql .= "VALUES('$first_name','$last_name','$username','$email','$password')";
+    $sql = "INSERT INTO users(first_name,last_name,username,email,password, p_image) ";
+    $sql .= "VALUES('$first_name','$last_name','$username','$email','$password', 'images/profile/default.jpg')";
     confirm(query($sql));
     set_message("Uspješna registracija! Molimo Vas ulogirajte se.");
     redirect('login.php');

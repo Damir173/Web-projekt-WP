@@ -42,7 +42,7 @@ $Posts = Posts::getById( (int)$_GET['PostsId'] );
 
 
    <div class="adminwp col-xs-12 col-md-6 box">
-   <img src= "../Web-projekt-WP/images/adminwp.png" width="100%" class="slikawp" >
+   <img src= "../Web-projekt-WP/images/adminwp.png" width="100%" class="slikawp"  >
 
    </div>
 <div class="container-fluid h-100 cf col-xs-12 col-md-6 box">

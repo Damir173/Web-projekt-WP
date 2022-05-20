@@ -60,7 +60,9 @@ include "functions/init.php"
           </li>
             <?php else: ?>
           <li class="nav-item profile-name <?php if($page =='profile'){echo 'active';}?>">
-            <a class="nav-link" href="profile.php"><?php $user = get_user(); echo $user['username'];?>  </a>
+         
+
+            <a class="nav-link" href="profile.php">      <img src= "<?php $user = get_user(); echo $user['p_image'];?>  " style="width:35px; height:35px; margin-right:5px; border-radius:50%; padding-top:0px; padding-bottom:0px; margin-top:0px;margin-bottom:0px;"><?php $user = get_user(); echo $user['username'];?>  </a>
           </li>
    
            <?php endif; ?>
