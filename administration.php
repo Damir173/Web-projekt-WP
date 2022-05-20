@@ -1,6 +1,7 @@
 <?php $page = 'administration'; include "inc/header.php";
 $action = isset( $_GET['action'] ) ? $_GET['action'] : "";
 
+user_restrictions();
 create_post();
 
 

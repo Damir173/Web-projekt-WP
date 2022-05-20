@@ -214,7 +214,7 @@ function create_post()
 {
     $errors = [];
     if ($_SERVER['REQUEST_METHOD'] == "POST") {
-        $post_content = clean($_POST['post_content']);
+        $post_content = $_POST['post_content'];
         $naslov = clean($_POST['naslov']);
         $sazetak = clean($_POST['sazetak']);
         if (strlen($post_content) > 500) {
@@ -259,11 +259,11 @@ function user_posts($id = NULL)
 }
 
 
-function updatepodatke(){
+function updatepw(){
 
     $errors = [];
 
-    if ($_SERVER['REQUEST_METHOD'] == "POST") {
+    if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['change_pw']))  {
         $pw_old = clean($_POST['old_password']);
         $pw = clean($_POST['password']);
         $pw_con = clean($_POST['confirm_password']);
@@ -298,6 +298,129 @@ function updatepodatke(){
             confirm(query($sql));
         }
     
+    }
+}
+
+function updateusername(){
+    $errors = [];
+    $user = get_user();
+    $user_id = $user['id'];
+    if ($_SERVER['REQUEST_METHOD'] == "POST"){
+
+        if (isset($_POST['change_username'])) {
+            $username = clean($_POST['username']);
+            if (strlen($username) < 3) {
+                $errors[] = "Korisničko ime ne može biti manje od 3 znaka!";
+            }
+            if (strlen($username) > 20) {
+                $errors[] = "Korisničko ime ne može biti veće od 20 znakova!";
+            }
+            if (user_exists($username)) {
+                $errors[] = "Korisničko ime je već zauzeto!";
+            }
+
+
+
+            if (!empty($errors)) {
+                foreach ($errors as $error) {
+                    echo '<div class="upoz col-xs-12 col-md-4 pl-0 mx-auto"> <img class="imica" src="../Web-projekt-WP/images/usklicnik.png"></img> <span class="erorispan">' . $error . '</span></div>';
+                }
+            }
+            else{
+
+                $sql = "UPDATE users SET username = '$username' WHERE users.id = '$user_id'";
+                confirm(query($sql));
+                redirect('profile.php');
+            }
+
+
+    }
+}
+
+}
+
+function updateemail(){
+
+
+    $errors = [];
+    $user = get_user();
+    $user_id = $user['id'];
+    if ($_SERVER['REQUEST_METHOD'] == "POST"){
+
+        if (isset($_POST['change_email'])) {
+
+            $email = clean($_POST['email']);
+
+        if (email_exists($email)) {
+            $errors[] = "E-mail adresa je već zauzeta!";
+        }
+
+
+
+            if (!empty($errors)) {
+                foreach ($errors as $error) {
+                    echo '<div class="upoz col-xs-12 col-md-4 pl-0 mx-auto"> <img class="imica" src="../Web-projekt-WP/images/usklicnik.png"></img> <span class="erorispan">' . $error . '</span></div>';
+                }
+            }
+            else{
+
+                $sql = "UPDATE users SET email = '$email' WHERE users.id = '$user_id'";
+                confirm(query($sql));
+                session_destroy();
+    
+                redirect('login.php');
+ 
+            
+            }
+
+
+         }
+    }
+}
+
+function uploadprofilna(){
+    if ($_SERVER['REQUEST_METHOD'] == "POST"){
+        if (isset($_POST['submit_profilna'])) {
+            $errors = "";
+            $odredisni_dir = "images/profile/";
+            $user = get_user();
+            $user_id = $user['id'];
+            $odredisni_file = $odredisni_dir . $user_id . "." .pathinfo(basename($_FILES['profilna_file']['name']), PATHINFO_EXTENSION );
+            $error = 0;
+            $fileType = strtolower(pathinfo($odredisni_file, PATHINFO_EXTENSION));
+
+            $provjera = getimagesize($_FILES['profilna_file']['tmp_name']);
+            if($provjera !== false){
+                $error = 0;
+            }
+            else{
+                $errors = "Datoteka nije slika!";
+                $error = 1;
+            }
+            if($_FILES['profilna_file']['size'] > 6000000){
+                $errors = "Slika je prevelike veličine. Max 6MB!";
+                $error = 1;
+            }
+
+            if($fileType != "jpg" && $fileType != "png" && $fileType != "gif" && $fileType != "jpeg" ){
+                $errors = "Dozvoljene ekstenzije: .jpg, .png, .gif i .jpeg!";
+                $error = 1;
+            }
+
+            if($error == 1){
+                echo "Error" . $errors;
+
+            }
+            else{
+                $sql = "UPDATE users SET p_image='$odredisni_file' WHERE id=$user_id";
+                confirm(query($sql));
+            }
+            if(!move_uploaded_file($_FILES["profilna_file"]["tmp_name"], $odredisni_file)) {
+                echo 'Error';
+            }
+        }
+        redirect('profile.php');
+
     }
 
 

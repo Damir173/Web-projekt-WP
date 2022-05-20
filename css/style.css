@@ -352,14 +352,17 @@ textarea{
 }
 
 .objavipost{
-  height:30px;
+  height:15px;
   background-image: url(../images/adminwpdonji.png);
+  padding: 0px;
+  margin: 0px;
 }
 
 #sub{
   margin-bottom:15px !important;
   margin-top:15px !important;
   width: 50%;;
+
 
 }
 
