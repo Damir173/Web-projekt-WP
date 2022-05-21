@@ -449,3 +449,14 @@ function dodajclana(){
 
 
 }
+
+
+function deleteuser($id){
+
+ $sql = "DELETE from team WHERE id = '$id'";
+        confirm(query($sql));
+ $sql = "DELETE from team WHERE id = (SELECT MAX(ID) FROM team) ";
+ confirm(query($sql));
+
+    }
+

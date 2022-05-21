@@ -3,7 +3,7 @@
 $connect = new PDO("mysql:host=localhost;dbname=zrssb", "root", "");
 
 
-$query = "SELECT * FROM team ORDER BY id DESC";
+$query = "SELECT * FROM team ORDER BY dodatna_fja ASC";
 
 $statement = $connect->prepare($query);
 
@@ -14,7 +14,6 @@ $result = $statement->fetchAll();
 
 ?>
 
-<!--  class = form control -->
 
     <div class="col-sm-6 upisnovih ">
 
@@ -81,6 +80,7 @@ $result = $statement->fetchAll();
     <?php
     foreach($result as $row)
     {
+        if( (isset($_SESSION['email'])) && $user['id_group'] == '1'  ){
      echo '
      <tr>
       <td>'.$row["first_name"].'</td>
@@ -88,12 +88,38 @@ $result = $statement->fetchAll();
       <td>'.$row["funkcija"].'</td>
       <td>'.$row["dodatna_fja"].'</td>
       <td>'.$row["datumpristupa"].'</td> 
-
-
-
+    <td>  <form  method="POST">
+      <input type="submit" value="Obrisi clana" name="'.$row["id"] . '" />
+      </form>
+    </td>
       
      </tr>
      ';
+    }
+
+    else{
+        echo '
+        <tr>
+         <td>'.$row["first_name"].'</td>
+         <td>'.$row["last_name"].'</td>
+         <td>'.$row["funkcija"].'</td>
+         <td>'.$row["dodatna_fja"].'</td>
+         <td>'.$row["datumpristupa"].'</td> 
+         
+        </tr>
+        ';
+
+    }
+    if ($_SERVER['REQUEST_METHOD'] == "POST"){
+    if(isset($_POST[$row["id"]])){
+        deleteuser($row["id"]);
+        echo "<meta http-equiv='refresh' content='0'>";
+        }
+
+
+    }
+
+     
     }
     ?>
     </tbody>
@@ -175,3 +201,4 @@ $(document).ready(function(){
  
 });
 </script>
+

@@ -1,7 +1,7 @@
 
 <?php
 
-//insert.php
+
 
 $connect = new PDO("mysql:host=localhost;dbname=zrssb", "root", "");
 $data = array(
