@@ -376,7 +376,7 @@ textarea{
   padding:0px !important;
   border: 1px solid gray;
   background-image: url("../images/profilewp.png");
-  height:600px;
+  height:750px;
 }
 
 .profilnaslika{
@@ -437,4 +437,6 @@ text-align: center;
   width:95% !important;
 
 }
+
+
 /* kraj profile css */ 

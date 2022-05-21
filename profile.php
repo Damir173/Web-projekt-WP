@@ -11,7 +11,7 @@ uploadprofilna();
 
 
 <div class="container ">
-   <div class="ime col-sm-3"> <p><?php $user = get_user(); echo $user['username'];?>  </p></div>
+   <div class="ime col-sm-3"> <p>Profil od: <?php $user = get_user(); echo $user['username'];?>  </p></div>
   <div class="row justify-content-center "> 
     <div class="col-sm-3 profilni d-flex aligns-items-center justify-content-center">
     <img src= "<?php $user = get_user(); echo $user['p_image'];?> " class="profilnaslika ">
@@ -20,11 +20,11 @@ uploadprofilna();
     <div class="podaciprofil col-sm-5">
     <div class="ime"> <p> Korisnički podaci </p></div>
     <span class="spanprofil" > Korisničko ime: </span> <span id="podacispan"><?php $user = get_user(); echo $user['username'];?></span><br>
+    
     <span class="spanprofil"> Ime: </span> <span id="podacispan"><?php $user = get_user(); echo $user['first_name'];?> </span><br>
     <span class="spanprofil"> Prezime: </span> <span id="podacispan"><?php $user = get_user(); echo $user['last_name'];?> </span><br>
     <span class="spanprofil"> E-mail: </span> <span id="podacispan"><?php $user = get_user(); echo $user['email'];?></span><br>
-    <span class="spanprofil"> Funkcija: </span> <span id="podacispan"> <?php if($user['id_group'] == '1'){ echo "administrator";} else {echo  "član";}?> </p></span><br><br>
-
+    <span class="spanprofil"> Funkcija: </span> <span id="podacispan"> <?php if($user['id_group'] == '1'){ echo "administrator";} else {echo  "član";}?> </p></span><br><hr>
 
 
 
@@ -58,6 +58,15 @@ uploadprofilna();
 <input type = "email" name="email" class="pw" placeholder="Email" required>    
 <input type = "submit" name="change_email" value="Promijeni e-mail" style="margin:0px auto; display:block;" >
 
+</form>
+
+<div class="ime"> <p> Promjena profilne slike </p></div>
+
+<form method="POST" enctype="multipart/form-data">
+
+<input type="file" name="profilna_file" required> 
+
+<input type="submit" value="Učitaj sliku" style="margin:0px auto; display:block;"  name="submit_profilna">
 </form>
 
 
