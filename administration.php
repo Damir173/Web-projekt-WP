@@ -26,21 +26,9 @@ $Posts = Posts::getById( (int)$_GET['PostsId'] );
 
 ?>
 
-<!-- <form method="POST" >
-<label for="naslov"><img src="../Web-projekt-WP/images/title.png" class="title_icon" >
-</label>
-<input type="text" id="naslov" name="naslov"><br><br>
-<label for="naslov">Sazetak:</label>
-<input type="text" id="sazetak" name="sazetak"><br><br>
-
-<textarea name="post_content" cols="60" rows="10" placeholder="Post content..."></textarea>
 
 
-<input type="submit" value="Post" name="submit">
-    </form> -->
-
-
-
+<?php  $user = get_user(); if( (isset($_SESSION['email'])) && $user['id_group'] == '1'  ): ?>
    <div class="adminwp col-xs-12 col-md-6 box">
    <img src= "../Web-projekt-WP/images/adminwp.png" width="100%" class="slikawp"  >
 
@@ -90,5 +78,8 @@ $Posts = Posts::getById( (int)$_GET['PostsId'] );
 
 		</div>
 	</div>
+	<?php  else: redirect('index.php') ?>
+	<?php endif; ?>
+
 
 

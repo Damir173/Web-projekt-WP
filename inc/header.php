@@ -9,6 +9,8 @@ include "functions/init.php"
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/style.css">
+
+    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -30,6 +32,9 @@ include "functions/init.php"
       <ul class="navbar-nav">
      <li class="nav-item <?php if($page =='index'){echo 'active';}?>">
           <a class="nav-link" href="index.php">Home</a>
+          </li>
+          <li class="nav-item <?php if($page =='aboutus'){echo 'active';}?>">
+          <a class="nav-link" href="aboutus.php">About us</a>
           </li>
  
          <?php  $user = get_user(); if( (isset($_SESSION['email'])) && $user['id_group'] == '1'  ): ?>

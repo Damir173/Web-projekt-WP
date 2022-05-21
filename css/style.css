@@ -440,3 +440,27 @@ text-align: center;
 
 
 /* kraj profile css */ 
+
+
+/* aboutus pocetak */
+
+.upisnovih{
+
+  height:280px;
+  background-color: aliceblue;
+  margin-bottom:50px;
+  padding:15px;
+}
+
+#fja{
+  float:right;
+}
+
+.tablica{
+  margin-top:100px;
+}
+
+.team{
+  font-size:13px;
+}
+/* aboutus kraj */

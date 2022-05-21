@@ -422,6 +422,29 @@ function uploadprofilna(){
         redirect('profile.php');
 
     }
+}
+
+
+function dodajclana(){
+    $errors = [];
+
+    if ($_SERVER['REQUEST_METHOD'] == "POST"){
+        $ime = $_POST['a_ime'];
+        $prezime = clean($_POST['a_prezime']);
+        $funkcija = clean($_POST['fja']);
+        $email = clean($_POST['a_email']);
+        $funkcijazbor = clean($_POST['a_dodatna']);
+        $datumpristupa = clean($_POST['a_datum']); 
+
+        $sql = "INSERT INTO team(first_name,last_name,funkcija,datumpristupa,email, dodatna_fja) ";
+        $sql .= "VALUES('$ime','$prezime','$funkcija','$datumpristupa','$email', '$funkcijazbor')";
+        confirm(query($sql));
+        
+
+
+    }
+
+
 
 
 
