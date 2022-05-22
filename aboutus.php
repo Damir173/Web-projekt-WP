@@ -110,17 +110,25 @@ $result = $statement->fetchAll();
         ';
 
     }
+}
     if ($_SERVER['REQUEST_METHOD'] == "POST"){
     if(isset($_POST[$row["id"]])){
         deleteuser($row["id"]);
         echo "<meta http-equiv='refresh' content='0'>";
         }
 
+        if(isset($_POST['zadnji'])){
+            deleteajax();
+            echo "<meta http-equiv='refresh' content='0'>";
+            }
+    
+
+
 
     }
 
      
-    }
+    
     ?>
     </tbody>
    </table>
@@ -179,6 +187,7 @@ $(document).ready(function(){
    method:"POST",
    data:$(this).serialize(),
    dataType:"json",
+
    beforeSend:function(){
     $('#add').attr('disabled', 'disabled');
    },
@@ -191,7 +200,8 @@ $(document).ready(function(){
      html += '<td>'+data.last_name+'</td>';
      html += '<td>'+data.funkcija+'</td>';
      html += '<td>'+data.dodatna_fja+'</td>';
-     html += '<td>'+data.datumpristupa+'</td></tr>';
+     html += '<td>'+data.datumpristupa+'</td>';
+     html += '<td> <form  method="POST"><input type="submit" value="Obrisi clana" name="zadnji" /></form></td></tr>';
      $('#table_data').prepend(html);
      $('#add_details')[0].reset();
     }

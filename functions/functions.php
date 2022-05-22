@@ -429,6 +429,7 @@ function dodajclana(){
     $errors = [];
 
     if ($_SERVER['REQUEST_METHOD'] == "POST"){
+        if (isset($_POST['add'])) {
         $ime = $_POST['a_ime'];
         $prezime = clean($_POST['a_prezime']);
         $funkcija = clean($_POST['fja']);
@@ -439,7 +440,7 @@ function dodajclana(){
         $sql = "INSERT INTO team(first_name,last_name,funkcija,datumpristupa,email, dodatna_fja) ";
         $sql .= "VALUES('$ime','$prezime','$funkcija','$datumpristupa','$email', '$funkcijazbor')";
         confirm(query($sql));
-        
+        }
 
 
     }
@@ -452,11 +453,13 @@ function dodajclana(){
 
 
 function deleteuser($id){
-
- $sql = "DELETE from team WHERE id = '$id'";
-        confirm(query($sql));
- $sql = "DELETE from team WHERE id = (SELECT MAX(ID) FROM team) ";
- confirm(query($sql));
+    $sql = "DELETE from team WHERE id = '$id'";
+    confirm(query($sql));
 
     }
+
+function deleteajax(){
+    $sql = "DELETE from team WHERE id = (SELECT MAX(ID) FROM team) ";
+    confirm(query($sql));
+}
 
