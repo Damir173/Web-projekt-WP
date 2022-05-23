@@ -463,3 +463,30 @@ function deleteajax(){
     confirm(query($sql));
 }
 
+function brojclanova($tip){
+
+    if($tip == 1 ) {
+        $query = "SELECT * from team";
+        $result = query($query);
+        return $result->num_rows;
+    }
+    if($tip == 2) {
+        $query = "SELECT * from team WHERE funkcija = 'Sudac'";
+        $result = query($query);
+        return $result->num_rows;
+    }
+
+    if($tip == 3) {
+        $query = "SELECT * from team WHERE funkcija = 'Nadzornik'";
+        $result = query($query);
+        return $result->num_rows;
+    }
+    if($tip == 4) {
+        $query = "SELECT * from team WHERE funkcija = 'mjvr'";
+        $result = query($query);
+        return $result->num_rows;
+    }
+    
+
+
+}   

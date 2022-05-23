@@ -11,9 +11,8 @@ $statement->execute();
 
 $result = $statement->fetchAll();
 
-
+ if( (isset($_SESSION['email'])) && $user['id_group'] == '1'  ) {
 ?>
-
 
     <div class="col-sm-6 upisnovih ">
 
@@ -63,10 +62,31 @@ $result = $statement->fetchAll();
    </form>
    </div>
 
+<?php } ?>
 
-   <div class="col-sm-8 tablica ">
+<div id="shiva"><span>Ukupan broj clanova: </span><span class="count"><?php echo brojclanova(1);?></span></div>
+<div id="shiva"><span>Broj sudaca:: </span><span class="count"><?php echo brojclanova(2);?></span></div>
+<div id="shiva"><span>Broj nadzornika: </span><span class="count"><?php echo brojclanova(3);?></span></div>
+<div id="shiva"><span>Broj mjeritelja vremena: </span><span class="count"><?php echo brojclanova(4);?></span></div>
 
-   <table class="table team table-striped table-bordered">
+
+
+
+   <table class="table table-responsive">
+<?php if( (isset($_SESSION['email'])) && $user['id_group'] == '1'  ) { ?>
+   <thead>
+     <tr>
+      <th>Ime</th>
+      <th>Prezime</th>
+      <th>Funkcija</th>
+      <th>Funkcija (zbor)</th>
+      <th>Datum pristupa</th>
+      <th>Brisanje člana</th>
+
+     </tr>
+    </thead>
+<?php } else { ?>
+
     <thead>
      <tr>
       <th>Ime</th>
@@ -74,8 +94,12 @@ $result = $statement->fetchAll();
       <th>Funkcija</th>
       <th>Funkcija (zbor)</th>
       <th>Datum pristupa</th>
+
      </tr>
     </thead>
+<?php } ?>
+
+
     <tbody id="table_data">
     <?php
     foreach($result as $row)
@@ -112,16 +136,16 @@ $result = $statement->fetchAll();
     }
 }
     if ($_SERVER['REQUEST_METHOD'] == "POST"){
-    if(isset($_POST[$row["id"]])){
-        deleteuser($row["id"]);
-        echo "<meta http-equiv='refresh' content='0'>";
-        }
-
-        if(isset($_POST['zadnji'])){
+  
+           if(isset($_POST['zadnji'])){
             deleteajax();
             echo "<meta http-equiv='refresh' content='0'>";
             }
     
+        else{
+ deleteuser($row["id"]);
+                echo "<meta http-equiv='refresh' content='0'>";
+                       }
 
 
 
@@ -132,7 +156,7 @@ $result = $statement->fetchAll();
     ?>
     </tbody>
    </table>
-</div>
+
 
 
 <!-- 
@@ -210,5 +234,23 @@ $(document).ready(function(){
  });
  
 });
+
+
+// counter
+
+$('.count').each(function () {
+    $(this).prop('Counter',0).animate({
+        Counter: $(this).text()
+    }, {
+        duration: 2000,
+        easing: 'swing',
+        step: function (now) {
+            $(this).text(Math.ceil(now));
+        }
+    });
+});
+
+
+
 </script>
 
