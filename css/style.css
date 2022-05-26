@@ -437,7 +437,9 @@ text-align: center;
   width:95% !important;
 
 }
-
+.profileupload{
+font-size:10px; 
+}
 
 /* kraj profile css */ 
 
@@ -463,4 +465,134 @@ text-align: center;
 .team{
   font-size:13px;
 }
+
+#shiva{
+  font-size:25px;
+  margin:auto;  
+}
+.stat{
+  margin:auto;
+}
+
+/* anim */
+
+.animacije{
+  margin:auto !important; 
+}
+.letters2{
+  font-size:25px;
+}
+.letters{
+ font-size:50px; 
+}
+
+.ml1 .letter {
+  margin:auto;
+  line-height: 1em;
+
+}
+
+.ml1 .text-wrapper {
+  position: relative;
+  margin:auto;
+  display: inline-block;
+  padding-top: 0.1em;
+  padding-right: 0.05em;
+  padding-bottom: 0.15em;
+}
+
+.ml1 .line {
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  height: 3px;
+  width: 100%;
+  margin:auto;
+  background-color: rgb(18, 18, 18);
+  transform-origin: 0 0;
+}
+
+.ml1 .line1 { top: 0; }
+.ml1 .line2 { bottom: 0; }
+
+#onamap{
+  text-align: justify;
+}
+
+
+
+.red1, .red2{
+  background-color: aliceblue;
+  padding-top:15px;
+}
+
+.red1{
+  border-top-left-radius: 5px; 
+  border-bottom-left-radius: 5px;
+}
+.red2{
+border-top-right-radius: 5px; 
+border-bottom-right-radius: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+.animated {
+  background-image: url(/css/images/logo.png);
+  background-repeat: no-repeat;
+  background-position: left top;
+
+  -webkit-animation-duration: 5s;
+  animation-duration: 5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@-webkit-keyframes bounceInUp {
+  0% {
+     opacity: 0;
+     -webkit-transform: translateY(2000px);
+  }
+  60% {
+     opacity: 1;
+     -webkit-transform: translateY(-30px);
+  }
+  80% {
+     -webkit-transform: translateY(10px);
+  }
+  100% {
+     -webkit-transform: translateY(0);
+  }
+}
+
+@keyframes bounceInUp {
+  0% {
+     opacity: 0;
+     transform: translateY(2000px);
+  }
+  60% {
+     opacity: 1;
+     transform: translateY(-30px);
+  }
+  80% {
+     transform: translateY(10px);
+  }
+  100% {
+     transform: translateY(0);
+  }
+}
+
+.bounceInUp {
+  -webkit-animation-name: bounceInUp;
+  animation-name: bounceInUp;
+}
+
+
 /* aboutus kraj */

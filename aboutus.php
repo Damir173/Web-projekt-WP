@@ -1,239 +1,87 @@
-<?php $page = 'aboutus'; include "inc/header.php"; dodajclana();
-
-$connect = new PDO("mysql:host=localhost;dbname=zrssb", "root", "");
+<?php $page = 'aboutus'; include "inc/header.php"; ?>
 
 
-$query = "SELECT * FROM team ORDER BY dodatna_fja ASC";
-
-$statement = $connect->prepare($query);
-
-$statement->execute();
-
-$result = $statement->fetchAll();
-
- if( (isset($_SESSION['email'])) && $user['id_group'] == '1'  ) {
-?>
-
-    <div class="col-sm-6 upisnovih ">
-
-   <form method="post" id="add_details">
-    <div class="form-group">
-    <label class="spanprofil" for="first_name">Ime člana:</label>
-    <input  class="pw" type="text" name="first_name" placeholder="Ime člana" required ><br>    
+<div class="container d-none d-xl-block">
+  <div class="row justify-content-center ">
+    <div class="col-4">
+    <h1 class="ml2">
+  <span class="text-wrapper">
+    <span class="letters2">&nbsp&nbsp&nbsp&nbspZbor rukometnih sudaca</span>
+  </span>
+</h1>
+<h1 class="ml1">
+  <span class="text-wrapper">
+    <span class="line line1"></span>
+    <span class="letters">Slavonski Brod</span>
+    <span class="line line2"></span>
+  </span>
+</h1>
     </div>
-    <div class="form-group">
-    <label class="spanprofil" for="last_name">Prezime člana:</label>
-    <input  class="pw" type="text" name="last_name" placeholder="Prezime člana" required ><br>   
-    </div>
-    <div class="form-group">
-    <label class="spanprofil" for="funkcija">Funkcija:</label>
-    <select id="fja" name="funkcija">
-        <option value="Sudac">Sudac</option>
-        <option value="Nadzornik">Nadzornik</option>
-        <option value="mjvr">Mj. vremena/zapisničar</option>
-    </select><br>
-    </div>
+</div>
+<br>
 
-    <div class="form-group">
-    <label class="spanprofil" for="email">E-mail:</label>
-    <input  class="pw" type="email" name="email" placeholder="E-mail adresa" required ><br>   
+ </div>
+
+
+
+ <div class="container-fluid" style="margin-top:10px; width:98%">
+
+  <div class="row justify-content-center">
+    <div class="col-sm-4 red1">
+    <h2 id = "animated-example" class = "animated bounceInUp">Tko smo mi?</h2>
+   <hr style="height:5px;border-width:0;color:blue;background-color:blue; width:100px;">
+    <p id="onamap">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. A aliquam massa tincidunt sed. Pellentesque viverra hendrerit lacus, ac ultrices libero laoreet in. Vivamus porttitor dolor vel tincidunt egestas. Fusce et placerat sem. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cras eget tristique augue, in aliquet magna. Fusce vitae suscipit eros, eget maximus enim. Sed enim elit, aliquet nec vulputate sed, feugiat ac lectus. Aenean eget tristique odio. Morbi rutrum ligula nisi, id gravida turpis auctor in. Ut sollicitudin justo sit amet libero imperdiet euismod. Integer vitae libero imperdiet, suscipit libero.</p>
     </div>
 
-    <div class="form-group">
-    <label class="spanprofil" for="dodatna_fja">Funkcija (zbor):</label>
-    <select id="fja" name="dodatna_fja">
-        <option value="Clan">Član</option>
-        <option value="Tajnik">Tajnik</option>
-        <option value="Blagajnik">Blagajnik</option>
-        <option value="Predsjednik">Predsjednik &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</option>
+    <div class="col-sm-4 red2"> 
 
-    </select><br>
+  
+     <img class="embed-responsive embed-responsive-16by9" src="../Web-projekt-WP/images/handball.jpg" style=" margin:auto !important;  border-radius:5px; border: 1px solid gray; width:80%; height:95%;">
+
+    
     </div>
-
-    <div class="form-group">
-    <label class="spanprofil" for="datumpristupa">Datum pristupa:</label>
-    <input  class="pw" type="date" name="datumpristupa" required ><br><br>  
-
     </div>
+ </div>
 
-    <div class="form-group">
-     <input type="submit" name="add" id="add" class="btn btn-success" value="Add" />
-    </div>
-   </form>
-   </div>
 
-<?php } ?>
 
-<div id="shiva"><span>Ukupan broj clanova: </span><span class="count"><?php echo brojclanova(1);?></span></div>
-<div id="shiva"><span>Broj sudaca:: </span><span class="count"><?php echo brojclanova(2);?></span></div>
+ <div class="container-fluid" style="margin-top:10px; width:98%;">
+
+<div class="row justify-content-center ">
+  <div class="col-sm-4 red1 d">
+
+  <div class="stat" style="padding-bottom:10px">
+  <div class="d-none d-xl-block"> <br><br><br></div>
+  <div id="shiva"><span>Ukupan broj clanova: </span><span class="count"><?php echo brojclanova(1);?></span></div>
+<div id="shiva"><span>Broj sudaca: </span><span class="count"><?php echo brojclanova(2);?></span></div>
 <div id="shiva"><span>Broj nadzornika: </span><span class="count"><?php echo brojclanova(3);?></span></div>
 <div id="shiva"><span>Broj mjeritelja vremena: </span><span class="count"><?php echo brojclanova(4);?></span></div>
 
+  </div>
 
 
+</div>
 
-   <table class="table table-responsive">
-<?php if( (isset($_SESSION['email'])) && $user['id_group'] == '1'  ) { ?>
-   <thead>
-     <tr>
-      <th>Ime</th>
-      <th>Prezime</th>
-      <th>Funkcija</th>
-      <th>Funkcija (zbor)</th>
-      <th>Datum pristupa</th>
-      <th>Brisanje člana</th>
-
-     </tr>
-    </thead>
-<?php } else { ?>
-
-    <thead>
-     <tr>
-      <th>Ime</th>
-      <th>Prezime</th>
-      <th>Funkcija</th>
-      <th>Funkcija (zbor)</th>
-      <th>Datum pristupa</th>
-
-     </tr>
-    </thead>
-<?php } ?>
-
-
-    <tbody id="table_data">
-    <?php
-    foreach($result as $row)
-    {
-        if( (isset($_SESSION['email'])) && $user['id_group'] == '1'  ){
-     echo '
-     <tr>
-      <td>'.$row["first_name"].'</td>
-      <td>'.$row["last_name"].'</td>
-      <td>'.$row["funkcija"].'</td>
-      <td>'.$row["dodatna_fja"].'</td>
-      <td>'.$row["datumpristupa"].'</td> 
-    <td>  <form  method="POST">
-      <input type="submit" value="Obrisi clana" name="'.$row["id"] . '" />
-      </form>
-    </td>
-      
-     </tr>
-     ';
-    }
-
-    else{
-        echo '
-        <tr>
-         <td>'.$row["first_name"].'</td>
-         <td>'.$row["last_name"].'</td>
-         <td>'.$row["funkcija"].'</td>
-         <td>'.$row["dodatna_fja"].'</td>
-         <td>'.$row["datumpristupa"].'</td> 
-         
-        </tr>
-        ';
-
-    }
-}
-    if ($_SERVER['REQUEST_METHOD'] == "POST"){
+  <div class="col-sm-4 red2">
+  <h2 id = "animated-example" class = "animated bounceInUp">Statistika</h2>
+   <hr style="height:5px;border-width:0;color:blue;background-color:blue; width:100px;">
+  <p id="onamap">Lorem ipsum dolor sit amet, consectetur adipiscing elit. A aliquam massa tincidunt sed. Pellentesque viverra hendrerit lacus, ac ultrices libero laoreet in. Vivamus porttitor dolor vel tincidunt egestas. Fusce et placerat sem. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cras eget tristique augue, in aliquet magna. Fusce vitae suscipit eros, eget maximus enim. Sed enim elit, aliquet nec vulputate sed, feugiat ac lectus. Aenean eget tristique odio. Morbi rutrum ligula nisi, id gravida turpis auctor in. Ut sollicitudin justo sit amet libero imperdiet euismod. Integer vitae libero imperdiet, suscipit libero.</p>
   
-           if(isset($_POST['zadnji'])){
-            deleteajax();
-            echo "<meta http-equiv='refresh' content='0'>";
-            }
-    
-        else{
- deleteuser($row["id"]);
-                echo "<meta http-equiv='refresh' content='0'>";
-                       }
-
-
-
-    }
-
-     
-    
-    ?>
-    </tbody>
-   </table>
-
-
-
-<!-- 
-<div class="container ">
-  <div class="row "> 
-    <div class="col-sm-6 upisnovih ">
-
-    
-    <form  method="POST">
-
-    <label class="spanprofil" for="a_ime">Ime člana:</label>
-    <input  class="pw" type="text" name="a_ime" placeholder="Ime člana" required ><br>    
-    <label class="spanprofil" for="a_prezime">Prezime člana:</label>
-    <input  class="pw" type="text" name="a_prezime" placeholder="Prezime člana" required ><br>   
-    <label class="spanprofil" for="fja">Funkcija:</label>
-    <select id="fja" name="fja">
-        <option value="Sudac">Sudac</option>
-        <option value="Nadzornik">Nadzornik</option>
-        <option value="mjvr">Mj. vremena/zapisničar</option>
-    </select><br>
-
-    <label class="spanprofil" for="a_email">E-mail:</label>
-    <input  class="pw" type="email" name="a_email" placeholder="E-mail adresa" required ><br>   
-    <label class="spanprofil" for="a_dodatna">Funkcija (zbor):</label>
-    <select id="fja" name="a_dodatna">
-        <option value="Clan">Član</option>
-        <option value="Tajnik">Tajnik</option>
-        <option value="Blagajnik">Blagajnik</option>
-        <option value="Predsjednik">Predsjednik &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</option>
-
-    </select><br>
-    <label class="spanprofil" for="a_datum">Datum pristupa:</label>
-    <input  class="pw" type="date" name="a_datum" required ><br><br>  
+  </div>
+  </div>
+</div>
 
 
 
 
 
-<input type = "submit" name="dodaj_clana" value="Dodaj novog člana" style="margin:0px auto; display:block;">
 
-          </form>
 
-  </div> -->
-  
+
+
+
 <script>
-$(document).ready(function(){
- 
- $('#add_details').on('submit', function(event){
-  event.preventDefault();
-  $.ajax({
-   url:"insert.php",
-   method:"POST",
-   data:$(this).serialize(),
-   dataType:"json",
-
-   beforeSend:function(){
-    $('#add').attr('disabled', 'disabled');
-   },
-   success:function(data){
-    $('#add').attr('disabled', false);
-    if(data.first_name)
-    {
-     var html = '<tr>';
-     html += '<td>'+data.first_name+'</td>';
-     html += '<td>'+data.last_name+'</td>';
-     html += '<td>'+data.funkcija+'</td>';
-     html += '<td>'+data.dodatna_fja+'</td>';
-     html += '<td>'+data.datumpristupa+'</td>';
-     html += '<td> <form  method="POST"><input type="submit" value="Obrisi clana" name="zadnji" /></form></td></tr>';
-     $('#table_data').prepend(html);
-     $('#add_details')[0].reset();
-    }
-   }
-  })
- });
- 
-});
 
 
 // counter
@@ -242,7 +90,7 @@ $('.count').each(function () {
     $(this).prop('Counter',0).animate({
         Counter: $(this).text()
     }, {
-        duration: 2000,
+        duration: 5500,
         easing: 'swing',
         step: function (now) {
             $(this).text(Math.ceil(now));
@@ -254,3 +102,69 @@ $('.count').each(function () {
 
 </script>
 
+
+
+
+<script>
+
+    // Wrap every letter in a span
+var textWrapper = document.querySelector('.ml1 .letters');
+textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+anime.timeline({loop: true})
+  .add({
+    targets: '.ml1 .letter',
+    scale: [0.3,1],
+    opacity: [0,1],
+    translateZ: 0,
+    easing: "easeOutExpo",
+    duration: 1000,
+    delay: (el, i) => 70 * (i+1) + 1000
+  }).add({
+    targets: '.ml1 .line',
+    scaleX: [0,1],
+    opacity: [0.5,1],
+    easing: "easeOutExpo",
+    duration: 700,
+    offset: '-=875',
+    delay: (el, i, l) => 80 * (l - i)
+  }).add({
+    targets: '.ml1',
+    opacity: 0,
+    duration: 1000,
+    easing: "easeOutExpo",
+    delay: 1000
+  });
+
+
+var textWrapper2 = document.querySelector('.ml2 .letters2');
+textWrapper2.innerHTML = textWrapper2.textContent.replace(/\S/g, "<span class='letter2'>$&</span>");
+
+
+anime.timeline({loop: true})
+  .add({
+    targets: '.ml2 .letter2',
+    scale: [0.3,1],
+    opacity: [0,1],
+    translateZ: 0,
+    easing: "easeOutExpo",
+    duration: 1000,
+    delay: (el, i) => 70 * (i+1)
+  }).add({
+    targets: '.ml2 .line',
+    scaleX: [0,1],
+    opacity: [0.5,1],
+    easing: "easeOutExpo",
+    duration: 700,
+    offset: '-=875',
+    delay: (el, i, l) => 80 * (l - i)
+  }).add({
+    targets: '.ml2',
+    opacity: 0,
+    duration: 1000,
+    easing: "easeOutExpo",
+    delay: 1000
+  });
+
+
+</script>

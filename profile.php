@@ -10,7 +10,7 @@ uploadprofilna();
 
 
 
-<div class="container ">
+<div class="container-fluid ">
    <div class="ime col-sm-3"> <p>Profil od: <?php $user = get_user(); echo $user['username'];?>  </p></div>
   <div class="row justify-content-center "> 
     <div class="col-sm-3 profilni d-flex aligns-items-center justify-content-center">
@@ -64,7 +64,8 @@ uploadprofilna();
 
 <form method="POST" enctype="multipart/form-data">
 
-<input type="file" name="profilna_file" required> 
+<input class="form-control" name="profilna_file" type="file" id="formFile" style="margin-bottom:5px;" required>
+    
 
 <input type="submit" value="Učitaj sliku" style="margin:0px auto; display:block;"  name="submit_profilna">
 </form>

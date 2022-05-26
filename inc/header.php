@@ -12,6 +12,7 @@ include "functions/init.php"
 
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -35,6 +36,9 @@ include "functions/init.php"
           </li>
           <li class="nav-item <?php if($page =='aboutus'){echo 'active';}?>">
           <a class="nav-link" href="aboutus.php">About us</a>
+          </li>
+          <li class="nav-item <?php if($page =='team'){echo 'active';}?>">
+          <a class="nav-link" href="team.php">Team</a>
           </li>
  
          <?php  $user = get_user(); if( (isset($_SESSION['email'])) && $user['id_group'] == '1'  ): ?>
