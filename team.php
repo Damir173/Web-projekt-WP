@@ -16,65 +16,72 @@ $statement->execute();
 
 $result = $statement->fetchAll();
 
- if( (isset($_SESSION['email'])) && $user['id_group'] == '1'  ) {
+
 ?>
 
-    <div class="col-sm-6 upisnovih ">
+<div class="container-fluid" style="margin-top:10px; width:98%">
 
-   <form method="post" id="add_details">
-    <div class="form-group">
-    <label class="spanprofil" for="first_name">Ime člana:</label>
-    <input  class="pw" type="text" name="first_name" placeholder="Ime člana" required ><br>    
-    </div>
-    <div class="form-group">
-    <label class="spanprofil" for="last_name">Prezime člana:</label>
-    <input  class="pw" type="text" name="last_name" placeholder="Prezime člana" required ><br>   
-    </div>
-    <div class="form-group">
-    <label class="spanprofil" for="funkcija">Funkcija:</label>
-    <select id="fja" name="funkcija">
-        <option value="Sudac">Sudac</option>
-        <option value="Nadzornik">Nadzornik</option>
-        <option value="mjvr">Mj. vremena/zapisničar</option>
-    </select><br>
-    </div>
+<div class="row justify-content-center">
+  <div class="col-sm-4 red1">
+  <h2 id = "animated-example" class = "animated bounceInUp">Želiš biti dio tima?</h2>
+ <hr style="height:5px;border-width:0;color:blue;background-color:blue; width:100px;">
+  <p id="onamap">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. A aliquam massa tincidunt sed. Pellentesque viverra hendrerit lacus, ac ultrices libero laoreet in. Vivamus porttitor dolor vel tincidunt egestas. Fusce et placerat sem. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cras eget tristique augue, in aliquet magna. Fusce vitae suscipit eros, eget maximus enim. Sed enim elit, aliquet nec vulputate sed, feugiat ac lectus. Aenean eget tristique odio. Morbi rutrum ligula nisi, id gravida turpis auctor in. Ut sollicitudin justo sit amet libero imperdiet euismod. Integer vitae libero imperdiet, suscipit libero.</p>
+  </div>
 
+  <div class="col-sm-4 red2"> 
+
+
+  <form method="post" id="add_details " style="padding-top:20px">
     <div class="form-group">
-    <label class="spanprofil" for="email">E-mail:</label>
+    <label class="spanprofil" for="first_name">(*) Ime:</label>
+    <input  class="pw" type="text" name="first_name" placeholder="Vaše ime" required ><br>    
+    </div>
+    <div class="form-group">
+    <label class="spanprofil" for="last_name">(*) Prezime:</label>
+    <input  class="pw" type="text" name="last_name" placeholder="Vaše prezime" required ><br>   
+    </div>
+    <div class="form-group">
+    <label class="spanprofil" for="email">(*) E-mail:</label>
     <input  class="pw" type="email" name="email" placeholder="E-mail adresa" required ><br>   
     </div>
 
     <div class="form-group">
-    <label class="spanprofil" for="dodatna_fja">Funkcija (zbor):</label>
-    <select id="fja" name="dodatna_fja">
-        <option value="Clan">Član</option>
-        <option value="Tajnik">Tajnik</option>
-        <option value="Blagajnik">Blagajnik</option>
-        <option value="Predsjednik">Predsjednik &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</option>
-
-    </select><br>
-    </div>
-
-    <div class="form-group">
-    <label class="spanprofil" for="datumpristupa">Datum pristupa:</label>
-    <input  class="pw" type="date" name="datumpristupa" required ><br><br>  
+    <label class="spanprofil" for="datumpristupa">Poruka</label>
+    <textarea  class="pw" type="date" placeholder="Ukratko opišite razloge eventualnog pristupanja.. " name="datumpristupa" ></textarea>
 
     </div>
 
     <div class="form-group">
-     <input type="submit" name="add" id="add" class="btn btn-success" value="Add" />
+     <input type="submit" name="add" id="add" class="btn btn-success" value="Pošalji upit" />
     </div>
    </form>
-   </div>
-
-<?php } ?>
-
-
-
+  
+  </div>
+  </div>
+</div>
 
 
 
-<table class="table table-responsive">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid">
+ 
+
+<div class="table table-responsive w-100 d-block d-md-table ">
+
+<table class= "tablica table col-sm-8  text-center  mx-auto" style="padding-top:40px !important"  >
 <?php if( (isset($_SESSION['email'])) && $user['id_group'] == '1'  ) { ?>
    <thead>
      <tr>
@@ -159,6 +166,66 @@ $result = $statement->fetchAll();
     </tbody>
    </table>
 
+  </div>
+
+  </div>
+
+
+  
+<?php  if( (isset($_SESSION['email'])) && $user['id_group'] == '1'  ) { ?>
+  <div class="container-fluid" style="width:98%;">
+  <div class="row adminski justify-content-center">
+
+    <div class="col-sm-8 upisnovih ">
+
+   <form method="post" id="add_details" style="padding-top:20px;">
+    <div class="form-group">
+    <label class="spanprofil" for="first_name">Ime člana:</label>
+    <input  class="pw" type="text" name="first_name" placeholder="Ime člana" required ><br>    
+    </div>
+    <div class="form-group">
+    <label class="spanprofil" for="last_name">Prezime člana:</label>
+    <input  class="pw" type="text" name="last_name" placeholder="Prezime člana" required ><br>   
+    </div>
+    <div class="form-group">
+    <label class="spanprofil" for="funkcija">Funkcija:</label>
+    <select id="fja" name="funkcija">
+        <option value="Sudac">Sudac</option>
+        <option value="Nadzornik">Nadzornik</option>
+        <option value="mjvr">Mj. vremena/zapisničar</option>
+    </select><br>
+    </div>
+
+    <div class="form-group">
+    <label class="spanprofil" for="email">E-mail:</label>
+    <input  class="pw" type="email" name="email" placeholder="E-mail adresa" required ><br>   
+    </div>
+
+    <div class="form-group">
+    <label class="spanprofil" for="dodatna_fja">Funkcija (zbor):</label>
+    <select id="fja" name="dodatna_fja">
+        <option value="Clan">Član</option>
+        <option value="Tajnik">Tajnik</option>
+        <option value="Blagajnik">Blagajnik</option>
+        <option value="Predsjednik">Predsjednik &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</option>
+
+    </select><br>
+    </div>
+
+    <div class="form-group">
+    <label class="spanprofil" for="datumpristupa">Datum pristupa:</label>
+    <input  class="pw" type="date" name="datumpristupa" required ><br><br>  
+
+    </div>
+
+    <div class="form-group">
+     <input type="submit" name="add" id="add2" class="btn btn-success" value="Dodaj novog člana" />
+    </div>
+   </form>
+   </div>
+</div>
+  </div>
+<?php } ?>
 
 
    <script>

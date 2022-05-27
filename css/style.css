@@ -447,12 +447,11 @@ font-size:10px;
 /* aboutus pocetak */
 
 .upisnovih{
-
-  height:280px;
   background-color: aliceblue;
-  margin-bottom:50px;
-  padding:15px;
+  border:1px solid gray;
+  margin-bottom:10px;
 }
+
 
 #fja{
   float:right;
@@ -524,15 +523,18 @@ font-size:10px;
 .red1, .red2{
   background-color: aliceblue;
   padding-top:15px;
+  border:1px solid gray;
 }
 
 .red1{
   border-top-left-radius: 5px; 
   border-bottom-left-radius: 5px;
+  border-right:0px;
 }
 .red2{
 border-top-right-radius: 5px; 
 border-bottom-right-radius: 5px;
+border-left: 0px;
 }
 
 
@@ -545,12 +547,9 @@ border-bottom-right-radius: 5px;
 
 
 .animated {
-  background-image: url(/css/images/logo.png);
-  background-repeat: no-repeat;
-  background-position: left top;
 
-  -webkit-animation-duration: 5s;
-  animation-duration: 5s;
+  -webkit-animation-duration: 3s;
+  animation-duration: 3s;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
 }
@@ -596,3 +595,41 @@ border-bottom-right-radius: 5px;
 
 
 /* aboutus kraj */
+
+
+/* pocetak team */
+
+#add{
+  margin-top:15px;
+  width:100%;
+}
+
+.table{
+  margin-top:10px;
+}
+
+.tablica{
+  background-color: aliceblue !important;
+  border:1px solid gray !important;
+}
+
+.tablica th{
+  background-color: rgb(225, 225, 225) !important;
+  border:1px solid gray !important;
+}
+
+.tablica td{
+  border: 1px solid gray !important;
+
+}
+
+.adminski{
+  margin-top:10px !important;
+}
+
+#add2{
+  width:100%;
+  margin-top:0px; 
+}
+
+/*  kraj team */
