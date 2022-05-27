@@ -23,7 +23,6 @@ define( "DB_USERNAME", "root" );
 define( "DB_PASSWORD", "" );
 define( "CLASS_PATH", "classes" );
 define( "TEMPLATE_PATH", "templates" );
-define( "HOMEPAGE_NUM_ARTICLES", 5 );
-define( "ADMIN_USERNAME", "admin" );
-define( "ADMIN_PASSWORD", "mypass" );
-require( CLASS_PATH . "/Article.php" );
+define( "HOMEPAGE_NUM_PostsS", 5 );
+
+require( CLASS_PATH . "/Posts.php" );
