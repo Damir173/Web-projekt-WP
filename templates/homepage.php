@@ -1,7 +1,6 @@
 
 
-
- <div class="container-fluid" style="margin-top:10px; margin-bottom:25px; width:98%">
+  <div class="container-fluid" style="margin-top:10px; margin-bottom:25px; width:98%">
 
 <div class="row justify-content-center">
   
@@ -25,8 +24,7 @@
 </span>
   </div>
   <div class="col-sm-6 ">
-  <span class="hp input-group-text"><i class=" fa fa-user" aria-hidden="true"></i> <span class="pubDate"><?php  $user = get_user($results['Posts']->user_id);  echo "Objavio: " . $user['first_name'];?>  </span>
-
+  <span class="hp input-group-text"><i class=" fa fa-user" aria-hidden="true"></i> <span class="pubDate"><?php echo getUName($Posts->user_id) ?></span>
   </div>
 </div>
 <div class="rh row">
@@ -83,8 +81,6 @@
   </div>
   </div>
 </div>
-
-
 
 
 

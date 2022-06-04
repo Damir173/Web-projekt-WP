@@ -54,7 +54,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. A aliquam massa tincidu
     </div>
 
     <div class="form-group">
-     <input type="submit" name="intrested" id="intrested" class="btn btn-success" value="Pošalji upit" />
+     <input type="submit" name="intrested" id="intrested" class="btn btn-primary" value="Pošalji upit" />
     </div>
    </form>
   
@@ -217,7 +217,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
     </div>
 
     <div class="form-group">
-     <input type="submit" name="add" id="add2" class="btn btn-success" value="Dodaj novog člana" />
+     <input type="submit" name="add" id="add2" class="btn btn-primary" value="Dodaj novog člana" />
     </div>
    </form>
    </div>

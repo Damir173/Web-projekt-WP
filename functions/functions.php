@@ -513,3 +513,12 @@ function intrestedInsert(){
     }
     
 }
+
+function getUName($id){
+
+    $query = "SELECT first_name FROM users WHERE users.id = '$id' ";
+    $result = query($query);
+    $row = mysqli_fetch_assoc($result);
+
+    return $row['first_name'];
+}

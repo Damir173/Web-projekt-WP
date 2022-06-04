@@ -80,8 +80,8 @@ $Posts = Posts::getById( (int)$_GET['PostsId'] );
 						</div>
 
 
-            <input type="submit" value="Objavi post" id="sub" name="submit">
-			<div class="objavipost"> </div>
+            <input type="submit" value="Objavi post" class="btn btn-primary " name="submit" style="width:100%; border-radius:0px !important;">
+
 
 					</form> 	
 				</div>

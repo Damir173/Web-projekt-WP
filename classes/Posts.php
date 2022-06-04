@@ -35,6 +35,9 @@ class Posts
   * @var string
   */
   public $content = null;
+/**
+
+  
 
   /*
   * @param assoc The property values
@@ -47,6 +50,8 @@ class Posts
     if ( isset( $data['title'] ) ) $this->title = preg_replace ( "/[^\.\,\-\_\'\"\@\?\!\:\$ a-zA-Z0-9()]/", "", $data['title'] );
     if ( isset( $data['summary'] ) ) $this->summary = preg_replace ( "/[^\.\,\-\_\'\"\@\?\!\:\$ a-zA-Z0-9()]/", "", $data['summary'] );
     if ( isset( $data['content'] ) ) $this->content = $data['content'];
+
+
   }
 
 

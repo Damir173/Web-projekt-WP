@@ -119,26 +119,4 @@ uploadprofilna();
 
 
 
-<?php
-
-
-if(isset($_SESSION['email'])) {
-  $user = get_user(); 
- 
- 
- 
- 
- 
- $userp = user_posts($user['id']);
- 
- echo $userp;
- 
- }
- 
- else { 
-   redirect("login.php");
- }
-
- 
- ?>
-
+<br>

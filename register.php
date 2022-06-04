@@ -59,7 +59,7 @@ validate_user_registration();    ?>
 						</div>
 						
 							<div class="d-flex justify-content-center mt-3 login_container">
-                            <input type = "submit" name="register-submit" value="Register now" class="regb btn btn-success">
+                            <input type = "submit" name="register-submit" value="Register now" class="regb btn btn-primary">
 
 				   </div>
 					</form>
