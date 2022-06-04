@@ -10,8 +10,7 @@ $data = array(
     ':funkcija'  => $_POST["funkcija"],
     ':email'  => $_POST["email"],
     ':dodatna_fja'  => $_POST["dodatna_fja"],
-    ':datumpristupa'  => $_POST["datumpristupa"]
-   ); 
+    ':datumpristupa'  => $_POST["datumpristupa"] ); 
    
    $query = "
     INSERT INTO team 
@@ -29,8 +28,7 @@ $data = array(
      'funkcija'  => $_POST['funkcija'],
      'email'  => $_POST['email'],
      'dodatna_fja'  => $_POST['dodatna_fja'],
-     'datumpristupa'  => $_POST['datumpristupa']
-    );
+     'datumpristupa'  => $_POST['datumpristupa']   );
    
     echo json_encode($output);
    }

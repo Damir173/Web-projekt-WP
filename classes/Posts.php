@@ -66,6 +66,7 @@ class Posts
         list ( $y, $m, $d ) = $publicationDate;
         $this->publicationDate = mktime ( 0, 0, 0, $m, $d, $y );
       }
+  
     }
   }
 

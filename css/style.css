@@ -253,6 +253,9 @@ padding-bottom:2px;}
   outline: 0px !important;
 }
 
+.regb{
+  width:100%;
+}
 .input-group-text {
   background: rgba(23, 23, 23, 0.724) !important;
   color: white !important;
@@ -388,6 +391,8 @@ textarea{
   background-image: url("../images/profilewp.png");
   height:750px;
 }
+
+
 
 .profilnaslika{
   border-radius:50%;
@@ -614,6 +619,11 @@ border-left: 0px;
   width:100%;
 }
 
+#intrested{
+  margin-top:15px;
+  width:100%;
+}
+
 .table{
   margin-top:10px;
 }
@@ -643,3 +653,104 @@ border-left: 0px;
 }
 
 /*  kraj team */
+
+
+/*  pocetak  naslovnice */
+
+.postovi{
+  background-color: rgb(226, 223, 223);
+  border-left:1px solid gray;
+  border-top: 1px solid gray;
+  border-bottom: 1px solid gray;
+  padding-left:15px;
+  padding-top:15px;
+}
+
+.hrs{
+  background-color: rgb(226, 223, 223);
+  border-right: 1px solid gray;
+  border-top: 1px solid gray;
+  border-bottom: 1px solid gray;
+}
+
+
+@media screen and (max-width: 480px) {
+  .postovi {
+border-right:1px solid gray;
+ }
+ .hrs {
+  border-left: 1px solid gray;
+ }
+}
+/* kraj naslovnice */
+
+.rh{
+
+  word-wrap:break-word;
+
+}
+
+.vanjski{
+  border:1px solid gray;
+  background-color: rgb(212, 212, 212);
+
+}
+
+.hp{
+
+  height:30px;
+  width:95%;
+  margin:auto;
+  margin-top:10px;
+  padding-top:10px;
+}
+
+#sspan{
+  padding-left:20px;
+  padding-right:20px;
+  text-align: justify;
+
+}
+.s{
+  padding-top:15px;
+  margin-bottom:25px;
+}
+
+#ha4{
+
+  word-wrap:break-word;
+  margin:auto;
+
+}
+.pubDate{
+  padding-left:10px;
+}
+
+
+.fleksi{
+height:fit-content;
+padding:5px; 
+background-color: #2780ce;
+}
+
+.apf{
+  color:rgb(64, 64, 64);
+}
+
+.apf:hover{
+  color:rgb(0, 0, 0);
+
+}
+.bpl{
+  background-color: #2780ce !important;
+}
+
+#sspan{
+  word-wrap:break-word;
+
+}
+
+.drugi{
+  height:3px;
+  background-color: rgb(74, 74, 74);
+}

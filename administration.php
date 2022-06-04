@@ -6,6 +6,21 @@ create_post();
 
 
 
+$connect = new PDO("mysql:host=localhost;dbname=zrssb", "root", "");
+
+
+$query = "SELECT * FROM intrested ORDER BY date DESC";
+
+$statement = $connect->prepare($query);
+
+$statement->execute();
+
+$result = $statement->fetchAll();
+
+
+
+
+
 switch ( $action ) {
 
   case 'deletePosts':
@@ -83,3 +98,66 @@ $Posts = Posts::getById( (int)$_GET['PostsId'] );
 
 
 
+
+
+	<div class="container-fluid">
+ 
+
+ <div class="table table-responsive w-100 d-block d-md-table ">
+ 
+ <table class= "tablica table col-sm-8  text-center  mx-auto" style="padding-top:40px !important"  >
+	<thead>
+	  <tr>
+	   <th>Ime</th>
+	   <th>Prezime</th>
+	   <th>Email</th>
+	   <th>Poruka</th>
+	   <th>Datum </th>
+	   <th>Riješi zahtjev</th>
+	   <th>Zahtjev riješen</th>
+	  </tr>
+	 </thead>
+
+ 
+	 <tbody id="table_data">
+	 <?php
+	 foreach($result as $row)
+	 {
+
+	 if($row["isRead"] == 0) {
+		echo '
+		<tr>
+		 <td>'.$row["first_name"].'</td>
+		 <td>'.$row["last_name"].'</td>
+		 <td>'.$row["email"].'</td>
+		 <td>'.$row["msg"].'</td>
+		 <td>'.$row["date"].'</td>
+		 <td><a  href="checked.php?id='.$row["id"].'" class="button">Riješi zahtjev</a></td>
+		 <td><img src="../Web-projekt-WP/images/minus.png" width="25px" height="25px" ></td>
+		 </tr>
+		';
+		}
+	else{
+
+		echo '
+		<tr>
+		 <td>'.$row["first_name"].'</td>
+		 <td>'.$row["last_name"].'</td>
+		 <td>'.$row["email"].'</td>
+		 <td>'.$row["msg"].'</td>
+		 <td>'.$row["date"].'</td> 
+		 <td>/</td>
+		 <td><img src="../Web-projekt-WP/images/plus.png" width="25px" height="25px" ></td>
+
+		 </tr>
+		';
+	}
+	}
+
+	?>
+
+	
+</tbody>
+   </table>
+  </div>
+  </div>

@@ -46,7 +46,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. A aliquam massa tincidu
 
 
 
- <div class="container-fluid" style="margin-top:10px; width:98%;">
+ <div class="container-fluid" style="margin-top:10px; margin-bottom:20px; width:98%;">
 
 <div class="row justify-content-center ">
   <div class="col-sm-4 red1 d">
@@ -63,7 +63,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. A aliquam massa tincidu
 
 </div>
 
-  <div class="col-sm-4 red2">
+  <div class="col-sm-4 red2" >
   <h2 id = "animated-example" class = "animated bounceInUp">Statistika</h2>
    <hr style="height:5px;border-width:0;color:blue;background-color:blue; width:100px;">
   <p id="onamap">Lorem ipsum dolor sit amet, consectetur adipiscing elit. A aliquam massa tincidunt sed. Pellentesque viverra hendrerit lacus, ac ultrices libero laoreet in. Vivamus porttitor dolor vel tincidunt egestas. Fusce et placerat sem. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cras eget tristique augue, in aliquet magna. Fusce vitae suscipit eros, eget maximus enim. Sed enim elit, aliquet nec vulputate sed, feugiat ac lectus. Aenean eget tristique odio. Morbi rutrum ligula nisi, id gravida turpis auctor in. Ut sollicitudin justo sit amet libero imperdiet euismod. Integer vitae libero imperdiet, suscipit libero.</p>

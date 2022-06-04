@@ -23,6 +23,6 @@ define( "DB_USERNAME", "root" );
 define( "DB_PASSWORD", "" );
 define( "CLASS_PATH", "classes" );
 define( "TEMPLATE_PATH", "templates" );
-define( "HOMEPAGE_NUM_PostsS", 5 );
+define( "HOMEPAGE_NUM_PostsS", 6 );
 
 require( CLASS_PATH . "/Posts.php" );

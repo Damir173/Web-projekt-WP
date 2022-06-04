@@ -37,16 +37,16 @@ uploadprofilna();
 <label class="spanprofil" for="password">Nova lozinka:</label> <input class="pw" type="password" name="password" placeholder="Nova lozinka" required><br>
 <label class="spanprofil" for="confirm_password">Potvrda (nova): </label> <input class="pw" type="password" name="confirm_password" placeholder="Potvrda nove lozinke" required ><br>
 
-<input type = "submit" name="change_pw" value="Promjeni lozinku" style="margin:0px auto; display:block;">
+<input type = "submit" name="change_pw" value="Promjeni lozinku" style="margin:0px auto; display:block; width:50%;"  class="btn btn-primary">
 
           </form>
-
+  
 
           <div class="ime"> <p> Promjena korisničkog imena </p></div>
           <form  method="POST">
 <label class="spanprofil" for="username">Novo kor. ime: </label>
 <input type = "text" name="username" placeholder="Username" class="pw" required>   
-<input type = "submit" name="change_username" value="Promjeni username" style="margin:0px auto; display:block;">
+<input type = "submit" name="change_username" value="Promjeni username" style="margin:0px auto; display:block; width:50%;"  class="btn btn-primary">
 
 </form>
 
@@ -56,7 +56,7 @@ uploadprofilna();
 
 <label class="spanprofil" for="email">Nova e-mail adresa: </label>
 <input type = "email" name="email" class="pw" placeholder="Email" required>    
-<input type = "submit" name="change_email" value="Promijeni e-mail" style="margin:0px auto; display:block;" >
+<input type = "submit" name="change_email" value="Promijeni e-mail" style="margin:0px auto; display:block; width:50%;"  class="btn btn-primary">
 
 </form>
 
@@ -67,7 +67,7 @@ uploadprofilna();
 <input class="form-control" name="profilna_file" type="file" id="formFile" style="margin-bottom:5px;" required>
     
 
-<input type="submit" value="Učitaj sliku" style="margin:0px auto; display:block;"  name="submit_profilna">
+<input type="submit" value="Učitaj sliku" style="margin:0px auto; display:block; width:50%;"  name="submit_profilna" class="btn btn-primary">
 </form>
 
 

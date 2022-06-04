@@ -220,6 +220,10 @@ function create_post()
         if (strlen($post_content) > 500) {
             $errors[] = "Your post content is too long!";
         }
+        if(strlen($sazetak) > 50) {
+            $errors[] = "Your summary is too long!";
+
+        }
 
         if (!empty($errors)) {      
             foreach ($errors as $error) {
@@ -481,12 +485,31 @@ function brojclanova($tip){
         $result = query($query);
         return $result->num_rows;
     }
+    
     if($tip == 4) {
         $query = "SELECT * from team WHERE funkcija = 'mjvr'";
         $result = query($query);
         return $result->num_rows;
     }
-    
-
-
 }   
+
+
+function intrestedInsert(){
+
+    
+    if ($_SERVER['REQUEST_METHOD'] == "POST"){
+        if (isset($_POST['intrested'])) {
+
+            $ime = $_POST['first_name'];
+            $prezime = clean($_POST['last_name']);
+            $email = clean($_POST['email']);
+            $message = clean($_POST['msg']);
+
+            $sql = "INSERT INTO intrested(first_name,last_name,email,msg,isRead) ";
+            $sql .= "VALUES('$ime','$prezime','$email','$message','0')";
+            confirm(query($sql));
+
+        }
+    }
+    
+}

@@ -2,6 +2,7 @@
 
 
 dodajclana();
+intrestedInsert();
 
 
 
@@ -47,13 +48,13 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. A aliquam massa tincidu
     </div>
 
     <div class="form-group">
-    <label class="spanprofil" for="datumpristupa">Poruka</label>
-    <textarea  class="pw" type="date" placeholder="Ukratko opišite razloge eventualnog pristupanja.. " name="datumpristupa" ></textarea>
+    <label class="spanprofil" for="msg">Poruka</label>
+    <textarea  class="pw" type="date" placeholder="Ukratko opišite razloge eventualnog pristupanja.. " name="msg" ></textarea>
 
     </div>
 
     <div class="form-group">
-     <input type="submit" name="add" id="add" class="btn btn-success" value="Pošalji upit" />
+     <input type="submit" name="intrested" id="intrested" class="btn btn-success" value="Pošalji upit" />
     </div>
    </form>
   
@@ -121,12 +122,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. A aliquam massa tincidu
       <td>'.$row["funkcija"].'</td>
       <td>'.$row["dodatna_fja"].'</td>
       <td>'.$row["datumpristupa"].'</td> 
-    <td>  <form  method="POST">
-      <input type="submit" value="Obrisi clana" name="'.$row["id"] . '" />
-      </form>
-    </td>
-      
-     </tr>
+      <td><a  href="delete.php?id='.$row["id"].'" class="button">Obriši člana</a></td></tr>
      ';
     }
 
@@ -144,21 +140,23 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. A aliquam massa tincidu
 
     }
 }
-    if ($_SERVER['REQUEST_METHOD'] == "POST"){
-  
-           if(isset($_POST['zadnji'])){
-            deleteajax();
-            echo "<meta http-equiv='refresh' content='0'>";
-            }
-    
-        else{
- deleteuser($row["id"]);
-                echo "<meta http-equiv='refresh' content='0'>";
-                       }
 
-
-
+if ($_SERVER['REQUEST_METHOD'] == "POST"){
+  if(isset($_POST['zadnji'])){
+    deleteajax();
+    echo "<meta http-equiv='refresh' content='0'>";
     }
+
+
+
+
+
+  }
+                      
+
+
+
+  
 
      
     
@@ -252,7 +250,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. A aliquam massa tincidu
      html += '<td>'+data.funkcija+'</td>';
      html += '<td>'+data.dodatna_fja+'</td>';
      html += '<td>'+data.datumpristupa+'</td>';
-     html += '<td> <form  method="POST"><input type="submit" value="Obrisi clana" name="zadnji" /></form></td></tr>';
+     html += '<td> <a  href="delete.php?id='+data.id+' ">Obriši člana</a></td></tr>';
      $('#table_data').prepend(html);
      $('#add_details')[0].reset();
     }

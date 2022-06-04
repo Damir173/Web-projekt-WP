@@ -1,6 +1,5 @@
 <?php $page = 'index'; include "inc/header.php";
 
-
 $action = isset( $_GET['action'] ) ? $_GET['action'] : "";
 
 switch ( $action ) {
