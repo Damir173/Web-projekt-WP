@@ -9,8 +9,12 @@
 }
 
 body{   
-    background-color: rgb(231, 231, 231) !important;
+    background-color: #EEF4ED !important;
     overflow-x: hidden;
+}
+
+body {
+  font-family: 'Montserrat' !important;
 }
 
 
@@ -52,12 +56,12 @@ font: weight 1px;
 
 
   /* slideshow kraj */
-  .flag, .flag2  {
+  .flag, .ff  {
     margin: 0 5% 1% 5%;
     height: 56px;
 
     position: relative;
-    border-top: 56px solid rgb(197, 197, 197);
+    border-top: 56px solid #c5c5c5;
     border-left: 80px solid transparent;
     border-right: 80px solid transparent;
     filter: 
@@ -65,15 +69,15 @@ font: weight 1px;
  drop-shadow(0.01em 1px 0.01em rgb(114, 114, 114));
   }
 
-  .flag2{
-    margin-top:2% !important;
+  .ff{
     border-top:0;
-    border-bottom: 56px solid rgb(197, 197, 197);
+    border-bottom: 56px solid #c5c5c5;
     filter: 
     drop-shadow(0em -0.01em 0em rgb(114, 114, 114));
-    margin:auto;
-    width: 100%;
-    
+    margin:0px !important;
+    padding: 0px !important;
+    width: 100% !important;
+
   }
 
   
@@ -221,15 +225,8 @@ margin-right:20%;
 .brand_logo {
   height: 197px;
   width: 197px;
-  border-radius: 50%;
-  transition: transform .7s ease-in-out;
-  image-rendering: pixelated;
+}
 
-}
-.brand_logo:hover{
-  transform:rotate(360deg);
-  image-rendering: pixelated;
-}
 .form_container {
   margin-top: 100px;
   width: 100% !important;
@@ -389,7 +386,6 @@ textarea{
   padding:0px !important;
   border: 1px solid gray;
   background-image: url("../images/profilewp.png");
-  height:750px;
 }
 
 
@@ -497,7 +493,7 @@ font-size:10px;
   font-size:25px;
 }
 .letters{
- font-size:50px; 
+ font-size:45px; 
 }
 
 .ml1 .letter {
@@ -536,7 +532,7 @@ font-size:10px;
 
 
 .red1, .red2{
-  background-color: aliceblue;
+  background-color: #a6bdd2;
   padding-top:15px;
   border:1px solid gray;
 }
@@ -658,7 +654,7 @@ border-left: 0px;
 /*  pocetak  naslovnice */
 
 .postovi{
-  background-color: rgb(226, 223, 223);
+  background-color: #c5c5c5;
   border-left:1px solid gray;
   border-top: 1px solid gray;
   border-bottom: 1px solid gray;
@@ -667,21 +663,37 @@ border-left: 0px;
 }
 
 .hrs{
-  background-color: rgb(226, 223, 223);
+  background-color: #c5c5c5;
   border-right: 1px solid gray;
   border-top: 1px solid gray;
   border-bottom: 1px solid gray;
+  border-left:1px solid gray;
 }
 
 
 @media screen and (max-width: 480px) {
-  .postovi {
+ .postovi, .red1 {
 border-right:1px solid gray;
  }
- .hrs {
+ .hrs, .red2 {
   border-left: 1px solid gray;
  }
-}
+
+ .ha3
+ {
+   width:100% !important;
+   }
+
+  .st{
+    display:block !important;
+    margin:auto !important;
+  }
+
+  .ikone {
+    justify-content: center; 
+  padding-bottom:15px;}
+ }
+
 /* kraj naslovnice */
 
 .rh{
@@ -690,9 +702,14 @@ border-right:1px solid gray;
 
 }
 
+
+hr{
+  height:3px !important;
+}
+
 .vanjski{
   border:1px solid gray;
-  background-color: rgb(212, 212, 212);
+ background-color: #EEF4ED;
 
 }
 
@@ -721,6 +738,7 @@ border-right:1px solid gray;
   word-wrap:break-word;
   margin:auto;
 
+
 }
 .pubDate{
   padding-left:10px;
@@ -730,11 +748,12 @@ border-right:1px solid gray;
 .fleksi{
 height:fit-content;
 padding:5px; 
-background-color: #2780ce;
+background-color: #3474ac;
 }
 
 .apf{
-  color:rgb(64, 64, 64);
+  color: #EEF4ED;
+  padding:5px;
 }
 
 .apf:hover{
@@ -742,7 +761,7 @@ background-color: #2780ce;
 
 }
 .bpl{
-  background-color: #2780ce !important;
+  background-color: #255e91 !important;
 }
 
 #sspan{
@@ -753,4 +772,93 @@ background-color: #2780ce;
 .drugi{
   height:3px;
   background-color: rgb(74, 74, 74);
+}
+
+.ha3{
+
+height:10px;
+border-width:0;
+color:blue;
+background-color:blue;
+ width:100px;
+}
+/*  */
+
+
+
+.Prose, blockquote {
+  display: grid;
+  grid-template-columns: 
+    [full-start] minmax(1em, 1fr) 
+    [main-start] minmax(0, 36em) [main-end]
+    minmax(1em, 1fr) [full-end];
+
+    width:100%;
+  margin:auto;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.414);
+  background:white;
+}
+
+.Prose > * {
+  grid-column: main;
+}
+
+.Prose-splash {
+  grid-column: full;
+
+
+}
+
+blockquote {
+  background:rgb(151, 151, 151); color:white; 
+  padding:2em; margin:0; 
+  line-height:1.35;
+}
+blockquote inner {
+  display:block;
+  grid-column: main;
+  margin:auto;
+  font-size:1.15em;
+}
+blockquote cite {
+  display:block; text-align:right;
+  margin:.4em 0;
+}
+blockquote a {color:#def;}
+
+figcaption {padding:.8em;}
+a {color:#27b;}
+img {max-width:100%; vertical-align:top;}
+p {line-height:1.55; margin:0 0 1.4em;}
+* + p {margin-top:1.4em;}
+p + p {margin-top:0em;}
+h1 {font-size:4.88em; line-height:0.95; margin:.35em 0; margin-right:-8px;  }
+h1 small {font-size:56.5%; line-height:1;  }
+
+@media (min-width:900px) {
+  body { font-size:115%;}  
+}
+
+@media (min-width:1400px) {
+  body { font-size:130%;}  
+}
+
+.damir{
+  background-color: rgb(151, 151, 151);
+}
+
+/* footer */
+
+.ft{
+  background-color: #8DA9C4;
+
+  border:1px solid gray;
+}
+
+.col-sm-11{
+  width:95% !important;
+}
+
+.btn-primary{
+  background-color: #5f8fbc !important;
 }

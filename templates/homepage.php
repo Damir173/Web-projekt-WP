@@ -18,8 +18,8 @@
 <div class="row">
   </h4>
 </div>
-<div class="row">
-<div class="col-sm-6">
+<div class="row" ">
+<div class="col-sm-6 " ">
 <span class="hp input-group-text"><i class=" fa fa-calendar" aria-hidden="true"></i> <span class="pubDate"><?php echo date('j F l H:i', $Posts->publicationDate)?>  </span>
 </span>
   </div>
@@ -81,6 +81,5 @@
   </div>
   </div>
 </div>
-
 
 

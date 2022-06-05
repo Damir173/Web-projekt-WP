@@ -27,14 +27,14 @@
  <div class="container-fluid" style="margin-top:10px; width:98%">
 
   <div class="row justify-content-center">
-    <div class="col-sm-4 red1">
+    <div class="col-sm-4 red1" style="margin-top:5px;">
     <h2 id = "animated-example" class = "animated bounceInUp">Tko smo mi?</h2>
    <hr style="height:5px;border-width:0;color:blue;background-color:blue; width:100px;">
     <p id="onamap">
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. A aliquam massa tincidunt sed. Pellentesque viverra hendrerit lacus, ac ultrices libero laoreet in. Vivamus porttitor dolor vel tincidunt egestas. Fusce et placerat sem. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cras eget tristique augue, in aliquet magna. Fusce vitae suscipit eros, eget maximus enim. Sed enim elit, aliquet nec vulputate sed, feugiat ac lectus. Aenean eget tristique odio. Morbi rutrum ligula nisi, id gravida turpis auctor in. Ut sollicitudin justo sit amet libero imperdiet euismod. Integer vitae libero imperdiet, suscipit libero.</p>
     </div>
 
-    <div class="col-sm-4 red2"> 
+    <div class="col-sm-4 red2" style="margin-top:5px;"> 
 
   
      <img class="embed-responsive embed-responsive-16by9" src="../Web-projekt-WP/images/handball.jpg" style=" margin:auto !important;  border-radius:5px; border: 1px solid gray; width:80%; height:95%;">
@@ -49,7 +49,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. A aliquam massa tincidu
  <div class="container-fluid" style="margin-top:10px; margin-bottom:20px; width:98%;">
 
 <div class="row justify-content-center ">
-  <div class="col-sm-4 red1 d">
+  <div class="col-sm-4 red1 d" style="margin-top:5px;">
 
   <div class="stat" style="padding-bottom:10px">
   <div class="d-none d-xl-block"> <br><br><br></div>
@@ -63,7 +63,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. A aliquam massa tincidu
 
 </div>
 
-  <div class="col-sm-4 red2" >
+  <div class="col-sm-4 red2"  style="margin-top:5px;">
   <h2 id = "animated-example" class = "animated bounceInUp">Statistika</h2>
    <hr style="height:5px;border-width:0;color:blue;background-color:blue; width:100px;">
   <p id="onamap">Lorem ipsum dolor sit amet, consectetur adipiscing elit. A aliquam massa tincidunt sed. Pellentesque viverra hendrerit lacus, ac ultrices libero laoreet in. Vivamus porttitor dolor vel tincidunt egestas. Fusce et placerat sem. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cras eget tristique augue, in aliquet magna. Fusce vitae suscipit eros, eget maximus enim. Sed enim elit, aliquet nec vulputate sed, feugiat ac lectus. Aenean eget tristique odio. Morbi rutrum ligula nisi, id gravida turpis auctor in. Ut sollicitudin justo sit amet libero imperdiet euismod. Integer vitae libero imperdiet, suscipit libero.</p>
@@ -168,3 +168,9 @@ anime.timeline({loop: true})
 
 
 </script>
+
+
+<?php
+include "inc/footer.php" ;
+
+?>

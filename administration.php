@@ -161,3 +161,7 @@ $Posts = Posts::getById( (int)$_GET['PostsId'] );
    </table>
   </div>
   </div>
+
+
+
+  <?php include "inc/footer.php"; ?>

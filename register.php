@@ -76,7 +76,7 @@ validate_user_registration();    ?>
 		</div>
 	</div>
 
-
+    <?php include "inc/footer.php"; ?>
 <!-- <div class="regv col-md-7 mx-auto " >
 <div class ="regh"> <p id="reghp"> R E G I S T R A C I J A </p> </div>
 <form  method="POST" class="reg" >

@@ -55,7 +55,7 @@ login_check_pages();
 	</div>
 
 
-
+	<?php include "inc/footer.php"; ?>
 
 <!-- <div class="regv col-md-7 mx-auto " >
 <div class ="regh"> <p id="reghp"> P R I J A V A </p> </div>

@@ -522,3 +522,20 @@ function getUName($id){
 
     return $row['first_name'];
 }
+
+function getStatistic($tip){
+
+    if($tip == 1 ) {
+        $query = "SELECT * from users";
+        $result = query($query);
+        return $result->num_rows;
+
+    }
+
+    if($tip == 2) {
+        $query = "SELECT * from posts";
+        $result = query($query);
+        return $result->num_rows;
+
+    }
+}
